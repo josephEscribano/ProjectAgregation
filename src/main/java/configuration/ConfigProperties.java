@@ -7,10 +7,6 @@ package configuration;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,6 +26,19 @@ public class ConfigProperties {
     private ConfigProperties() {
         
     }
-
+    
+    public static ConfigProperties getInstance() {
+        if (configurationProperties == null) {
+            try {
+                configurationProperties = new ConfigProperties();
+                configurationProperties.properties = new Properties();
+                configurationProperties.properties.loadFromXML(new FileInputStream("propertiesFiles/settings.xml"));
+            } catch (IOException ex) {
+                Logger.getLogger(ConfigProperties.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return configurationProperties;
+    }
 }
 
