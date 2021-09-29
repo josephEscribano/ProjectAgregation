@@ -37,14 +37,15 @@ public class itemDAO  implements DAOItems{
 
     @Override
     public void save(Item t) {
-        List<Item> li = this.getAll();
         try(FileWriter writer = new FileWriter(file,true);
             BufferedWriter bw = new BufferedWriter(writer)){
-
+            String content = "\n" +t.toStringTextFile();
+            bw.write(content);
 
         }catch (IOException e){
-
+            alert.setContentText("error");
         }
+        alert.showAndWait();
     }
 
     @Override
