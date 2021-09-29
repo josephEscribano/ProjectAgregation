@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="fx.controllers.items.FXMLAddItemsController" prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <TextField fx:id="idBox" layoutX="427.0" layoutY="116.0" />
+        <TextField fx:id="nameBox" layoutX="427.0" layoutY="170.0" />
+        <Button layoutX="441.0" layoutY="320.0" mnemonicParsing="false" onAction="#saveItem" prefHeight="25.0" prefWidth="122.0" text="Save new item" />
+        <Label layoutX="427.0" layoutY="95.0" text="Item Id" />
+        <Label layoutX="427.0" layoutY="148.0" text="Name" />
+        <Label layoutX="427.0" layoutY="204.0" text="Company" />
+        <Label layoutX="29.0" layoutY="73.0" prefHeight="17.0" prefWidth="62.0" text="Items list:" />
+        <Label layoutX="29.0" layoutY="38.0" text="ADD A NEW ITEM" textFill="#000000bb">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="companyBox" layoutX="426.0" layoutY="225.0" />
+        <Label layoutX="427.0" layoutY="256.0" text="Price" />
+        <TextField fx:id="priceBox" layoutX="426.0" layoutY="277.0" />
+        <ListView fx:id="LVlist" layoutX="25.0" layoutY="97.0" prefHeight="250.0" prefWidth="374.0" />
+    </children>
+</AnchorPane>

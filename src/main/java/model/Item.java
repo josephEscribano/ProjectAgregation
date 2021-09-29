@@ -25,7 +25,14 @@ public class Item {
         this.company = company;
         this.price = price;
     }
-    
+
+    public Item(String s) {
+        String [] array = s.split(";");
+        this.idItem = Integer.parseInt(array[0]);
+        this.name = array[1];
+        this.company = array[2];
+        this.price = Double.parseDouble(array[3]);
+    }
 
     public int getIdItem() {
         return idItem;

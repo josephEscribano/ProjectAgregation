@@ -82,6 +82,9 @@ public class FXMLPrincipalController implements Initializable {
     private AnchorPane listItems;
     private FXMLListItemsController listItemsController;
 
+    private AnchorPane additem;
+    private FXMLAddItemsController additemscontroller;
+
     public void preloadLogin() {
         try {
             FXMLLoader loaderMenu = new FXMLLoader(
@@ -249,6 +252,27 @@ public class FXMLPrincipalController implements Initializable {
         }
 
     }
+    public void preloadadditems() {
+
+        try {
+            FXMLLoader loaderMenu = new FXMLLoader(
+                    getClass().getResource(
+                            "/fxml/items/FXMLAdditems.fxml"));
+            additem = loaderMenu.load();
+            additemscontroller = loaderMenu.getController();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void chargeAddItems() {
+        additemscontroller.loadItems();
+        fxRoot.setCenter(additem);
+    }
+
+
 
     public void chargeLogin() {
         fxRoot.setCenter(login);
@@ -299,7 +323,7 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(findReview);
     }
 
-    public void listItems(ActionEvent actionEvent) {
+    public void listItems() {
         listItemsController.loadItemsList();
         fxRoot.setCenter(listItems);
     }
@@ -323,7 +347,7 @@ public class FXMLPrincipalController implements Initializable {
         preloadAddReview();
         preloadDeleteReview();
         preloadFindReview();
-
+        preloadadditems();
         preloadListItems();
 
         chargeLogin();
