@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="lectura hecha y escritura a medias">
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="lectura hecha y escritura, falta filtrar los ids y que añada a la lista de la ventana add">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLDeleteItem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/itemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/itemDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLAddItems.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLAddItems.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/textfiles/items" beforeDir="false" afterPath="$PROJECT_DIR$/textfiles/items" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../filesexample" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -97,7 +106,8 @@
       <workItem from="1632238783775" duration="3452000" />
       <workItem from="1632243724119" duration="3108000" />
       <workItem from="1632247096574" duration="67000" />
-      <workItem from="1632936654294" duration="7828000" />
+      <workItem from="1632936654294" duration="8015000" />
+      <workItem from="1633273829175" duration="8003000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -120,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632946432493</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="lectura hecha y escritura, falta filtrar los ids y que añada a la lista de la ventana add">
+      <created>1632947127252</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632947127252</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +170,33 @@
     </ignored-roots>
     <MESSAGE value="Initial commit: Skeleton" />
     <MESSAGE value="lectura hecha y escritura a medias" />
-    <option name="LAST_COMMIT_MESSAGE" value="lectura hecha y escritura a medias" />
+    <MESSAGE value="lectura hecha y escritura, falta filtrar los ids y que añada a la lista de la ventana add" />
+    <option name="LAST_COMMIT_MESSAGE" value="lectura hecha y escritura, falta filtrar los ids y que añada a la lista de la ventana add" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/itemDAO.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/itemDAO.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

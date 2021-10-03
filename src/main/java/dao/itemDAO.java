@@ -18,23 +18,37 @@ public class itemDAO  implements DAOItems{
 
     @Override
     public List<Item> getAll() {
-        List<Item> li = new ArrayList<>();
 
         try {
+            daoitems.clear();
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line = br.readLine();
             while (line  != null){
                 Item it = new Item(line);
-                li.add(it);
+                daoitems.add(it);
                 line = br.readLine();
+
             }
         }catch (Exception e){
             alert.setContentText("error, al leer el fichero");
+            alert.showAndWait();
         }
-        alert.showAndWait();
-        return li;
+
+        return daoitems;
     }
 
+    @Override
+    public boolean getid(int id) {
+        boolean confirmacion = false;
+        for (Item it:daoitems) {
+            if (it.getIdItem() == id){
+                confirmacion = false;
+            }else{
+                confirmacion = true;
+            }
+        }
+        return confirmacion;
+    }
     @Override
     public void save(Item t) {
         try(FileWriter writer = new FileWriter(file,true);
@@ -44,8 +58,9 @@ public class itemDAO  implements DAOItems{
 
         }catch (IOException e){
             alert.setContentText("error");
+            alert.showAndWait();
         }
-        alert.showAndWait();
+
     }
 
     @Override
@@ -55,6 +70,26 @@ public class itemDAO  implements DAOItems{
 
     @Override
     public void delete(Item t) {
+        daoitems.remove(t);
+        try(FileWriter writer = new FileWriter(file,false);
+            BufferedWriter bw = new BufferedWriter(writer)){
 
+            for (int i = 0; i < daoitems.size(); i++) {
+                if (i == daoitems.size() -1){
+                    String content = daoitems.get(i).toStringTextFile();
+                    bw.write(content);
+                }else{
+                    String content = daoitems.get(i).toStringTextFile()+"\n";
+                    bw.write(content);
+                }
+            }
+
+
+        }catch (IOException e){
+            alert.setContentText("error");
+            alert.showAndWait();
+        }
     }
+
+
 }

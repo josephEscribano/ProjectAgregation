@@ -23,4 +23,6 @@ public interface DAOItems {
     void update(Item t);
      
     void delete(Item t);
+
+    boolean getid(int id);
 }

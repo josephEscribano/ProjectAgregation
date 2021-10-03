@@ -32,4 +32,14 @@ public class ItemsServices {
         DAOItems di = new itemDAO();
         di.save(new Item(id,name,company,price));
     }
+
+    public boolean getid(int id){
+        DAOItems di = new itemDAO();
+        return di.getid(id);
+    }
+
+    public void deleteItem(Item it){
+        DAOItems di = new itemDAO();
+        di.delete(it);
+    }
 }
