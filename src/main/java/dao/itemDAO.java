@@ -9,46 +9,40 @@ import java.util.List;
 
 public class itemDAO  implements DAOItems{
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    private static List<Item> daoitems = new ArrayList<>();
     File file = new File("textfiles/items");
     @Override
     public Item get(int id) {
-        return null;
+        List<Item> li = getAll();
+        Item t = null;
+        for (Item it:li) {
+            if (it.getIdItem() == id){
+                t = it;
+            }
+        }
+        return t;
     }
 
     @Override
     public List<Item> getAll() {
-
+        List<Item> li = new ArrayList<>();
         try {
-            daoitems.clear();
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line = br.readLine();
             while (line  != null){
                 Item it = new Item(line);
-                daoitems.add(it);
+                li.add(it);
                 line = br.readLine();
-
             }
+
+
         }catch (Exception e){
             alert.setContentText("error, al leer el fichero");
             alert.showAndWait();
         }
 
-        return daoitems;
+        return li;
     }
 
-    @Override
-    public boolean getid(int id) {
-        boolean confirmacion = false;
-        for (Item it:daoitems) {
-            if (it.getIdItem() == id){
-                confirmacion = false;
-            }else{
-                confirmacion = true;
-            }
-        }
-        return confirmacion;
-    }
     @Override
     public void save(Item t) {
         try(FileWriter writer = new FileWriter(file,true);
@@ -70,16 +64,17 @@ public class itemDAO  implements DAOItems{
 
     @Override
     public void delete(Item t) {
-        daoitems.remove(t);
+        List<Item> li = getAll();
+        li.remove(t);
         try(FileWriter writer = new FileWriter(file,false);
             BufferedWriter bw = new BufferedWriter(writer)){
 
-            for (int i = 0; i < daoitems.size(); i++) {
-                if (i == daoitems.size() -1){
-                    String content = daoitems.get(i).toStringTextFile();
+            for (int i = 0; i < li.size(); i++) {
+                if (i == li.size() -1){
+                    String content = li.get(i).toStringTextFile();
                     bw.write(content);
                 }else{
-                    String content = daoitems.get(i).toStringTextFile()+"\n";
+                    String content = li.get(i).toStringTextFile()+"\n";
                     bw.write(content);
                 }
             }

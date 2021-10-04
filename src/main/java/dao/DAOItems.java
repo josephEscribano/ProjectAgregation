@@ -24,5 +24,5 @@ public interface DAOItems {
      
     void delete(Item t);
 
-    boolean getid(int id);
+
 }

@@ -10,6 +10,7 @@ import java.util.List;
 
 import dao.DAOItems;
 import dao.itemDAO;
+import javafx.scene.control.Alert;
 import model.Item;
 
 /**
@@ -17,7 +18,7 @@ import model.Item;
  * @author dam2
  */
 public class ItemsServices {
-    
+    private Alert alert = new Alert(Alert.AlertType.INFORMATION);
     public ArrayList<Item> getAllItems() {
         ArrayList<Item> item =  null;
         return item;
@@ -27,16 +28,21 @@ public class ItemsServices {
         DAOItems di = new itemDAO();
         return di.getAll();
     }
+    public Item get(int id){
+        DAOItems di = new itemDAO();
+        return di.get(id);
+    }
 
     public void save(int id, String name, String company, double price){
         DAOItems di = new itemDAO();
-        di.save(new Item(id,name,company,price));
+        if (get(id) == null){
+            di.save(new Item(id,name,company,price));
+        }else{
+            alert.setContentText("El id ya existe");
+            alert.showAndWait();
+        }
     }
 
-    public boolean getid(int id){
-        DAOItems di = new itemDAO();
-        return di.getid(id);
-    }
 
     public void deleteItem(Item it){
         DAOItems di = new itemDAO();

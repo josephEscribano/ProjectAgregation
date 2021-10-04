@@ -2,6 +2,7 @@ package fx.controllers.items;
 
 
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import model.Item;
 import services.ItemsServices;
@@ -10,6 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FXMLDeleteItemController implements Initializable {
+    private Alert alert = new Alert(Alert.AlertType.INFORMATION);
     public ListView<Item> LVlistItems;
 
     @Override
@@ -23,6 +25,9 @@ public class FXMLDeleteItemController implements Initializable {
         if (it != null){
             LVlistItems.getItems().remove(it);
             is.deleteItem(it);
+        }else{
+            alert.setContentText("Selecciona un Item");
+            alert.showAndWait();
         }
     }
 
