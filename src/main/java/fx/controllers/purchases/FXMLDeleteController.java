@@ -21,15 +21,29 @@ import model.Purchase;
  * @author dam2
  */
 public class FXMLDeleteController implements Initializable {
-
+    private Alert alert = new Alert(AlertType.INFORMATION);
     @FXML
-    private ListView purchaseBox;
+    private ListView<Purchase> purchaseBox;
 
 
     public void loadPurchases() {
+        PurchasesServices ps = new PurchasesServices();
+        purchaseBox.getItems().clear();
+        purchaseBox.getItems().addAll(ps.getAllPurchases());
      }
     
     public void deletePurchase(){
+
+        Purchase p = purchaseBox.getSelectionModel().getSelectedItem();
+        PurchasesServices ps = new PurchasesServices();
+        if (p != null){
+            purchaseBox.getItems().remove(p);
+            ps.deletePurchase(p);
+        }else{
+            alert.setContentText("Tienes que seleccionar un elemento");
+            alert.showAndWait();
+        }
+
 
     }
     

@@ -5,8 +5,12 @@
  */
 package services;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
+import dao.DAOPurchases;
+import dao.DraftDAOpurchases;
 import model.Purchase;
 
 /**
@@ -15,9 +19,9 @@ import model.Purchase;
  */
 public class PurchasesServices {
 
-    public ArrayList<Purchase> getAllPurchases() {
-        ArrayList<Purchase> purch =  null;
-        return purch;
+    public List<Purchase> getAllPurchases() {
+        DAOPurchases dp = new DraftDAOpurchases();
+        return dp.getAll();
     }
 
     public ArrayList<Purchase> searchByDate(String date) {
@@ -31,11 +35,19 @@ public class PurchasesServices {
     }
 
     public void deletePurchase(Purchase purchase) {
+
+        DAOPurchases dp = new DraftDAOpurchases();
+        dp.delete(purchase);
+
+
      }
 
-    public Purchase addPurchase(String customerId, String itemId, String date) {
-        Purchase newPurchase = null;
-        return newPurchase;
+    public void addPurchase(int customerId, int itemId, LocalDate date) {
+        Purchase newPurchase = new Purchase(customerId,itemId,date);
+        DAOPurchases dp = new DraftDAOpurchases();
+
+        dp.save(newPurchase);
+
     }
 
 }

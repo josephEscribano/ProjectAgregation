@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -59,7 +58,7 @@ public class FXMLPrincipalController implements Initializable {
     private FXMLWelcomeController welcomeController;
 
     private AnchorPane purchases;
-    private FXMLPurchasesController purchasesController;
+    private FXMLAddPurchasesController purchasesController;
     private AnchorPane datePurchases;
     private FXMLDatePurchasesController datePurchasesController;
     private AnchorPane delete;
@@ -121,7 +120,7 @@ public class FXMLPrincipalController implements Initializable {
         try {
             FXMLLoader loaderMenu = new FXMLLoader(
                     getClass().getResource(
-                            "/fxml/purchases/FXMLPurchases.fxml"));
+                            "/fxml/purchases/FXMLAddPurchases.fxml"));
             purchases = loaderMenu.load();
             purchasesController = loaderMenu.getController();
 
