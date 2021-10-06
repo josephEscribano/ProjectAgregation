@@ -28,7 +28,7 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <ListView fx:id="LVlistItems" layoutX="43.0" layoutY="128.0" prefHeight="200.0" prefWidth="519.0" />
+        <ListView fx:id="lvlistItems" layoutX="43.0" layoutY="128.0" prefHeight="200.0" prefWidth="519.0" />
     </children>
 
 </AnchorPane>

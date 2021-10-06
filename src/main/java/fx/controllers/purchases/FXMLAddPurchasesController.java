@@ -107,18 +107,23 @@ public class FXMLAddPurchasesController implements Initializable {
         PurchasesServices ps = new PurchasesServices();
         Customer cu = customerBox.getSelectionModel().getSelectedItem();
         Item it = itemBox.getSelectionModel().getSelectedItem();
+
         try {
-            if (cu != null && it != null){
+            if (cu != null && it != null && dateBox.getValue() !=null){
                 int idcustomer = cu.getIdCustomer();
                 int iditem = it.getIdItem();
                 LocalDate date = dateBox.getValue();
                 ps.addPurchase(idcustomer,iditem,date);
-                loadPurchasesList();
+
+            }else{
+                alert.setContentText("Necesitas seleccionar todos los elementos");
+                alert.showAndWait();
             }
         }catch (Exception e){
-            alert.setContentText("Es necesario que elijas un elemento");
+            alert.setContentText("Es necesario que seleeciones todos los campos");
             alert.showAndWait();
         }
+        loadPurchasesList();
 
 
 

@@ -8,6 +8,7 @@ package services;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import dao.DAOPurchases;
 import dao.DraftDAOpurchases;
@@ -29,13 +30,18 @@ public class PurchasesServices {
         return purch;
     }
 
-    public ArrayList<Purchase> getPurchasesByClientId(int id) {
-        ArrayList<Purchase> purch =  null;
+    public List<Purchase> getPurchasesByClientId(int id) {
+        List<Purchase> purch =  null;
+
+        return purch;
+    }
+    public List<Purchase> getPurchasesByItemId(int id) {
+        DAOPurchases dp = new DraftDAOpurchases();
+        List<Purchase> purch =  dp.getAll().stream().filter(purchase -> purchase.getIditem() == id).collect(Collectors.toList());
         return purch;
     }
 
     public void deletePurchase(Purchase purchase) {
-
         DAOPurchases dp = new DraftDAOpurchases();
         dp.delete(purchase);
 

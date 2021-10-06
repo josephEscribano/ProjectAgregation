@@ -4,31 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="arreglos varios">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b1ca344ee7d18831cec3b217c85cbfcc8a7e495" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/221c475bcfe028392af35663ce5713134cb0c604" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b829020954e07c09bdb5f69f26d087305e7db982" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/darftDAOCustomers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/textfiles/purchases" afterDir="false" />
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="error con el delete">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLPurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLPurchases.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLAddPurchases.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLPurchasesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/purchases/FXMLPurchases.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Purchase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLDeleteItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLDeleteItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDeleteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDeleteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/textfiles/items" beforeDir="false" afterPath="$PROJECT_DIR$/textfiles/items" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/textfiles/purchases" beforeDir="false" afterPath="$PROJECT_DIR$/textfiles/purchases" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +109,8 @@
       <workItem from="1633273829175" duration="8948000" />
       <workItem from="1633368216504" duration="2802000" />
       <workItem from="1633371068372" duration="3157000" />
-      <workItem from="1633443911836" duration="24577000" />
+      <workItem from="1633443911836" duration="24855000" />
+      <workItem from="1633537090787" duration="5708000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -167,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633373310310</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="error con el delete">
+      <created>1633471278573</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633471278573</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,75 +197,41 @@
     <MESSAGE value="lectura hecha y escritura, falta filtrar los ids y que añada a la lista de la ventana add" />
     <MESSAGE value="terminado añadir items, borrar items,escribir y leer del fichero" />
     <MESSAGE value="arreglos varios" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglos varios" />
+    <MESSAGE value="error con el delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="error con el delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java</url>
-          <line>24</line>
+          <line>40</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/services/PurchasesServices.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/services/PurchasesServices.java</url>
-          <line>38</line>
+          <line>44</line>
           <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/itemDAO.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/model/Purchase.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java</url>
           <line>36</line>
           <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

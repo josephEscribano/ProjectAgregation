@@ -14,8 +14,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.nio.file.StandardOpenOption.APPEND;
-import static java.nio.file.StandardOpenOption.WRITE;
+import static java.nio.file.StandardOpenOption.*;
 
 public class DraftDAOpurchases implements DAOPurchases{
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -68,19 +67,15 @@ public class DraftDAOpurchases implements DAOPurchases{
     public void delete(Purchase t) {
 
         OpenOption[] options = new OpenOption[2];
-        options[0] = APPEND;
-        options[1] = WRITE;
+        options[0] = WRITE;
+        options[1] = TRUNCATE_EXISTING;
         List<Purchase> lp = getAll();
         lp.remove(t);
         try(BufferedWriter writer = Files.newBufferedWriter(file,options);
             BufferedWriter bw = new BufferedWriter(writer)) {
-            for(int i = 0; i <= lp.size();i++){
-                if (i < lp.size() -1){
-                    writer.newLine();
-                    writer.write(lp.get(i).toStringTexto(),0,lp.get(i).toStringTexto().length());
-                }else{
-                    writer.write(lp.get(i).toStringTexto(),0,lp.get(i).toStringTexto().length());
-                }
+            for(int i = 0; i < lp.size();i++){
+                bw.write(lp.get(i).toStringTexto());
+                bw.newLine();
             }
 
 
