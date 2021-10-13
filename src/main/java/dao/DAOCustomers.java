@@ -7,6 +7,7 @@ package dao;
 
 import model.Customer;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.util.List;
 
 /**
@@ -14,9 +15,9 @@ import java.util.List;
  */
 public interface DAOCustomers {
      
-    Customer get(int id);
+    Customer get(int id) throws ParserConfigurationException;
      
-    List<Customer> getAll();
+    List<Customer> getAll() throws ParserConfigurationException;
      
     void save(Customer t);
      

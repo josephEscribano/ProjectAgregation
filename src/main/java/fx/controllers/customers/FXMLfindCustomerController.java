@@ -17,6 +17,8 @@ import javafx.scene.control.TextField;
 import model.Customer;
 import services.CustomersServices;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 /**
  * FXML Controller class
  *
@@ -27,10 +29,11 @@ public class FXMLfindCustomerController implements Initializable {
     @FXML
     private TextField dniBox;
     @FXML
-    private ListView customerList;
+    private ListView<Customer> customerList;
     
-     public void searchById() {
-
+     public void searchById() throws ParserConfigurationException {
+        CustomersServices cs = new CustomersServices();
+        customerList.getItems().setAll(cs.searchById(Integer.parseInt(dniBox.getText())));
     }
     
     

@@ -17,12 +17,14 @@ import javafx.scene.control.TextField;
 import model.Customer;
 import services.CustomersServices;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 /**
  * FXML Controller class
  *
  */
 public class FXMLAddCustomerController implements Initializable {
-
+    private Alert alert = new Alert(AlertType.ERROR);
     @FXML
     private TextField idBox;
     @FXML
@@ -32,13 +34,21 @@ public class FXMLAddCustomerController implements Initializable {
     @FXML
     private TextField addressBox;
     @FXML
-    private ListView customerList;
+    private ListView<Customer> customerList;
 
-    public void loadCustomersList() {
+    public void loadCustomersList() throws ParserConfigurationException {
+        CustomersServices cs = new CustomersServices();
+        customerList.getItems().setAll(cs.getAllCustomers());
      }
 
-    public void addCustomer() {
-
+    public void addCustomer() throws ParserConfigurationException {
+        CustomersServices cs = new CustomersServices();
+        int id = Integer.parseInt(idBox.getText());
+        String name = nameBox.getText();
+        String phone = phoneBox.getText();
+        String address = addressBox.getText();
+        cs.addCustomer(id,name,phone,address);
+        loadCustomersList();
     }
 
     /**
@@ -46,7 +56,12 @@ public class FXMLAddCustomerController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        loadCustomersList();
+        try {
+            loadCustomersList();
+        } catch (ParserConfigurationException e) {
+            alert.setContentText("Error al cargar los elementos de la lista");
+            alert.showAndWait();
+        }
     }
 
 }

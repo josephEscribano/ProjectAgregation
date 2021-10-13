@@ -19,13 +19,22 @@ public class Purchase {
     private int Iditem;
     private LocalDate date;
 
+
     private static int aumento;
+
     public Purchase() {
-        this.idPurchase = aumento++;
+        //this.idPurchase = aumento++;
     }
 
-    public Purchase( int idCustomer, int item, LocalDate date) {
-        this.idPurchase = aumento++;
+    public Purchase(int idPurchase, int idCustomer, int iditem, LocalDate date) {
+        this.idPurchase = idPurchase;
+        this.idCustomer = idCustomer;
+        Iditem = iditem;
+        this.date = date;
+    }
+
+    public Purchase(int idCustomer, int item, LocalDate date) {
+        //this.idPurchase = aumento++;
         this.idCustomer = idCustomer;
         this.Iditem = item;
         this.date = date;
@@ -109,9 +118,4 @@ public class Purchase {
         }
         return true;
     }
-    
-    
-    
-    
-    
 }

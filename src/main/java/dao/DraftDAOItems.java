@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class itemDAO  implements DAOItems{
+public class DraftDAOItems implements DAOItems{
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
     File file = new File("textfiles/items");
     @Override
@@ -47,7 +47,7 @@ public class itemDAO  implements DAOItems{
     public void save(Item t) {
         try(FileWriter writer = new FileWriter(file,true);
             BufferedWriter bw = new BufferedWriter(writer)){
-            String content = "\n" +t.toStringTextFile();
+            String content = "\n" + t.toStringTextFile();
             bw.write(content);
 
         }catch (IOException e){

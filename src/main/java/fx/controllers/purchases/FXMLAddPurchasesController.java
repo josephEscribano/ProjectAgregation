@@ -6,18 +6,15 @@
 package fx.controllers.purchases;
 
 
-import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import dao.DAOCustomers;
 import dao.DAOItems;
-import dao.darftDAOCustomers;
-import dao.itemDAO;
+import dao.DarftDAOCustomers;
+import dao.DraftDAOItems;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -29,6 +26,8 @@ import model.Customer;
 import model.Item;
 import model.Purchase;
 import services.PurchasesServices;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * FXML Controller class
@@ -48,7 +47,7 @@ public class FXMLAddPurchasesController implements Initializable {
     private DatePicker dateBox;
 
     
-    public void load() {
+    public void load() throws ParserConfigurationException {
         loadCustomersList();
         loadPurchasesList();
         loadItemsList();
@@ -63,7 +62,7 @@ public class FXMLAddPurchasesController implements Initializable {
     }
 
     public void loadItemsList() {
-        DAOItems di = new itemDAO();
+        DAOItems di = new DraftDAOItems();
         List<Item> li= di.getAll();
         itemBox.getItems().clear();
         for (Item it:li) {
@@ -83,8 +82,8 @@ public class FXMLAddPurchasesController implements Initializable {
 
     }
 
-    public void loadCustomersList() {
-        DAOCustomers ddi = new darftDAOCustomers();
+    public void loadCustomersList() throws ParserConfigurationException {
+        DAOCustomers ddi = new DarftDAOCustomers();
         List<Customer> lc = ddi.getAll();
         customerBox.getItems().clear();
         for (Customer cu: lc) {

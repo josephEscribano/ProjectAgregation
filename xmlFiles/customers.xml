@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<customers>
+        
+    <customer>
+        <id>1</id>
+        <name>Joseph</name>
+        <phone>650190657</phone>
+        <address>Madrid</address>
+            
+    </customer>
+    
+    <customer>
+        <id>2</id>
+        <name>Julie</name>
+        <phone>654253823</phone>
+        <address>C/PRUEBA</address>
+    </customer>
+</customers>

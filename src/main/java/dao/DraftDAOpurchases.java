@@ -1,9 +1,11 @@
 package dao;
 
 
+import configuration.ConfigProperties;
 import javafx.scene.control.Alert;
 import model.Purchase;
 
+import javax.security.auth.login.Configuration;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -18,7 +20,7 @@ import static java.nio.file.StandardOpenOption.*;
 
 public class DraftDAOpurchases implements DAOPurchases{
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    private Path file = Paths.get("textfiles/purchases");
+    private Path file = Paths.get(ConfigProperties.getInstance().getProperty("Filepurchases"));
     @Override
     public Purchase get(int id) {
         return null;
@@ -27,6 +29,7 @@ public class DraftDAOpurchases implements DAOPurchases{
     @Override
     public List<Purchase> getAll() {
         List<Purchase> lp = new ArrayList<>();
+
         try {
             BufferedReader reader = Files.newBufferedReader(file);
             String line ;

@@ -22,6 +22,8 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 /**
  * FXML Controller class
  *
@@ -86,6 +88,10 @@ public class FXMLPrincipalController implements Initializable {
 
     private AnchorPane deleteitem;
     private FXMLDeleteItemController deleteitemscontroller;
+
+    private AnchorPane listCustomers;
+    private FXMLListCustomerController listCustomerController;
+
 
 
     public void preloadLogin() {
@@ -284,6 +290,22 @@ public class FXMLPrincipalController implements Initializable {
 
     }
 
+    public void preloadListCustomers() {
+
+        try {
+            FXMLLoader loaderMenu = new FXMLLoader(
+                    getClass().getResource(
+                            "/fxml/customers/FXMLListCustomer.fxml"));
+            listCustomers = loaderMenu.load();
+            listCustomerController = loaderMenu.getController();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+
 
 
 
@@ -298,7 +320,7 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(welcome);
     }
     
-    public void chargePurchases() {
+    public void chargePurchases() throws ParserConfigurationException {
         purchasesController.load();
         fxRoot.setCenter(purchases);
     }
@@ -311,7 +333,7 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(delete);
     }
 
-    public void chargeAddCustomer() {
+    public void chargeAddCustomer() throws ParserConfigurationException {
         addCustomerController.loadCustomersList();
         fxRoot.setCenter(addCustomer);
     }
@@ -322,6 +344,10 @@ public class FXMLPrincipalController implements Initializable {
     public void chargeDeleteCustomer() {
         deleteCustomerController.loadCustomersList();
         fxRoot.setCenter(deleteCustomer);
+    }
+    public void chargeListCustomer() throws ParserConfigurationException {
+        listCustomerController.load();
+        fxRoot.setCenter(listCustomers);
     }
 
     public void chargeAddReview() {
@@ -374,6 +400,7 @@ public class FXMLPrincipalController implements Initializable {
         preloadadditems();
         preloaddeleteitems();
         preloadListItems();
+        preloadListCustomers();
 
         chargeLogin();
 

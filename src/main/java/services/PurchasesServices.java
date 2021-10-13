@@ -51,7 +51,8 @@ public class PurchasesServices {
     public void addPurchase(int customerId, int itemId, LocalDate date) {
         Purchase newPurchase = new Purchase(customerId,itemId,date);
         DAOPurchases dp = new DraftDAOpurchases();
-
+        List<Purchase> lp = dp.getAll();
+        newPurchase.setIdPurchase(lp.get(lp.size() -1).getIdPurchase() + 1);
         dp.save(newPurchase);
 
     }
