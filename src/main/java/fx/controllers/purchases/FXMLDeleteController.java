@@ -40,7 +40,7 @@ public class FXMLDeleteController implements Initializable {
             purchaseBox.getItems().remove(p);
             ps.deletePurchase(p);
         }else{
-            alert.setContentText("Tienes que seleccionar un elemento");
+            alert.setContentText("You need select a element");
             alert.showAndWait();
         }
 

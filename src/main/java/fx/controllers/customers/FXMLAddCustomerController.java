@@ -36,12 +36,12 @@ public class FXMLAddCustomerController implements Initializable {
     @FXML
     private ListView<Customer> customerList;
 
-    public void loadCustomersList() throws ParserConfigurationException {
+    public void loadCustomersList()  {
         CustomersServices cs = new CustomersServices();
         customerList.getItems().setAll(cs.getAllCustomers());
      }
 
-    public void addCustomer() throws ParserConfigurationException {
+    public void addCustomer()  {
         CustomersServices cs = new CustomersServices();
         int id = Integer.parseInt(idBox.getText());
         String name = nameBox.getText();
@@ -56,12 +56,7 @@ public class FXMLAddCustomerController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            loadCustomersList();
-        } catch (ParserConfigurationException e) {
-            alert.setContentText("Error al cargar los elementos de la lista");
-            alert.showAndWait();
-        }
+        loadCustomersList();
     }
 
 }

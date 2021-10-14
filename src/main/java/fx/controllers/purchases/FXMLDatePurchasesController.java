@@ -29,7 +29,7 @@ public class FXMLDatePurchasesController implements Initializable {
     private ListView purchaseList;
 
     public void loadPurchasesList() {
-            }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

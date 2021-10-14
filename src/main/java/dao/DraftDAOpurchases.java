@@ -40,7 +40,7 @@ public class DraftDAOpurchases implements DAOPurchases{
             reader.close();
 
         }catch (IOException e){
-            alert.setContentText("Ha ocurrido un error");
+            alert.setContentText("error,when read the purchase file");
             alert.showAndWait();
         }
         return lp;
@@ -55,7 +55,7 @@ public class DraftDAOpurchases implements DAOPurchases{
             writer.write(t.toStringTexto(),0,t.toStringTexto().length());
             writer.newLine();
         }catch (IOException e){
-            alert.setContentText("Ha ocurrido un error");
+            alert.setContentText("error, when save the purchases");
             alert.showAndWait();
         }
     }
@@ -81,11 +81,8 @@ public class DraftDAOpurchases implements DAOPurchases{
                 bw.newLine();
             }
 
-
-
-
         }catch (IOException e){
-            alert.setContentText("Ha ocurrido un error");
+            alert.setContentText("error, when delete the purchase");
             alert.showAndWait();
         }
 

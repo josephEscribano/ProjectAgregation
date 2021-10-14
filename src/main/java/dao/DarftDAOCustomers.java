@@ -6,11 +6,13 @@ package dao;
 import configuration.ConfigProperties;
 import javafx.scene.control.Alert;
 import model.Customer;
+import model.Customers;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
+import javax.xml.bind.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -18,14 +20,83 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DarftDAOCustomers implements DAOCustomers{
     private Alert alert = new Alert(Alert.AlertType.ERROR);
     @Override
-    public Customer get(int id) throws ParserConfigurationException {
+    public Customer get(int id) {
         List<Customer> lc = getAll();
+        Customer c = null;
+        for (Customer ct:lc) {
+            if (ct.getIdCustomer() == id){
+                c = ct;
+            }
+        }
+        return c;
+    }
+
+    @Override
+    public List<Customer> getAll() {
+        List<Customer> lc = new ArrayList<>();
+        try {
+            JAXBContext context = JAXBContext.newInstance(Customers.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Path xmlFiles = Paths.get(ConfigProperties.getInstance().getProperty("XMLCustomer"));
+            Customers customerList = (Customers) unmarshaller.unmarshal(Files.newInputStream(xmlFiles));
+            lc.addAll(customerList.getCustomer());
+        } catch (JAXBException | IOException e) {
+            e.printStackTrace();
+        }
+
+        return lc;
+    }
+
+    @Override
+    public void save(Customer t) {
+        try{
+            JAXBContext context = JAXBContext.newInstance(Customers.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Path xmlFiles = Paths.get(ConfigProperties.getInstance().getProperty("XMLCustomer"));
+            Customers customerList = (Customers) unmarshaller.unmarshal(Files.newInputStream(xmlFiles));
+            customerList.getCustomer().add(t);
+            marshaller.marshal(customerList,Files.newOutputStream(xmlFiles));
+        } catch (JAXBException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public void update(Customer t) {
+
+    }
+
+    @Override
+    public void delete(Customer t) {
+        try{
+            JAXBContext context = JAXBContext.newInstance(Customers.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Path xmlFiles = Paths.get(ConfigProperties.getInstance().getProperty("XMLCustomer"));
+            Customers customerList = (Customers) unmarshaller.unmarshal(Files.newInputStream(xmlFiles));
+            customerList.getCustomer().remove(t);
+            marshaller.marshal(customerList,Files.newOutputStream(xmlFiles));
+        } catch (JAXBException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //This methods are the ones I use for read and write the xml with DOM
+    public Customer getDOM(int id)  {
+        List<Customer> lc = getAllDOM();
         Customer c = null;
         for (Customer ct:lc) {
             if (ct.getIdCustomer() == id){
@@ -36,8 +107,8 @@ public class DarftDAOCustomers implements DAOCustomers{
         return c;
     }
 
-    @Override
-    public List<Customer> getAll() throws ParserConfigurationException {
+
+    public List<Customer> getAllDOM()  {
         List<Customer> lc = new ArrayList<>();
         try{
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -47,14 +118,14 @@ public class DarftDAOCustomers implements DAOCustomers{
 
             for (int i =0 ; i<nCustomers;i++){
                 Customer cst = new Customer();
-                cst.setIdCustomer(Integer.parseInt(document.getElementsByTagName("id").item(i).getFirstChild().getNodeValue()));
+                cst.setIdCustomer(Integer.parseInt(document.getElementsByTagName("ididCustomer").item(i).getFirstChild().getNodeValue()));
                 cst.setName(document.getElementsByTagName("name").item(i).getFirstChild().getNodeValue());
                 cst.setPhone(document.getElementsByTagName("phone").item(i).getFirstChild().getNodeValue());
                 cst.setAddress(document.getElementsByTagName("address").item(i).getFirstChild().getNodeValue());
                 lc.add(cst);
             }
 
-        } catch (IOException | SAXException e) {
+        } catch (IOException | SAXException | ParserConfigurationException e) {
             alert.setContentText("Error al leer el fichero");
             alert.showAndWait();
         }
@@ -62,15 +133,15 @@ public class DarftDAOCustomers implements DAOCustomers{
         return lc;
     }
 
-    @Override
-    public void save(Customer t) {
+
+    public void saveDOM(Customer t) {
         try{
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(ConfigProperties.getInstance().getProperty("XMLCustomer"));
             Element root = document.getDocumentElement();
             Element itemNode = document.createElement("customer");
-            Element idNode = document.createElement("id");
+            Element idNode = document.createElement("idCustomer");
             Element nameNode = document.createElement("name");
             Element phoneNode = document.createElement("phone");
             Element addressNode = document.createElement("address");
@@ -100,13 +171,7 @@ public class DarftDAOCustomers implements DAOCustomers{
         }
     }
 
-    @Override
-    public void update(Customer t) {
 
-    }
 
-    @Override
-    public void delete(Customer t) {
 
-    }
 }

@@ -34,7 +34,7 @@ public class ItemsServices {
         if (get(id) == null){
             di.save(new Item(id,name,company,price));
         }else{
-            alert.setContentText("El id ya existe");
+            alert.setContentText("The id already exist");
             alert.showAndWait();
         }
     }

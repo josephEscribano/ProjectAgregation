@@ -22,16 +22,27 @@ import services.CustomersServices;
  * @author Laura
  */
 public class FXMLdeleteCustomerController implements Initializable {
-
+    private Alert alert = new Alert(AlertType.INFORMATION);
     @FXML
-    private ListView customerBox;
+    private ListView<Customer> customerBox;
 
     public void loadCustomersList() {
-
+        CustomersServices cs = new CustomersServices();
+        customerBox.getItems().setAll(cs.getAllCustomers());
     }
     
     public void deleteCustomer() {
+        CustomersServices cs = new CustomersServices();
+        Customer customer = customerBox.getSelectionModel().getSelectedItem();
+        if ( customer!= null){
+            customerBox.getItems().remove(customer);
+            cs.deleteCustomer(customer);
+        }else{
+            alert.setContentText("Select a customer");
+            alert.showAndWait();
         }
+
+    }
 
     /**
      * Initializes the controller class.

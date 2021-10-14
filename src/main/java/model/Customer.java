@@ -5,13 +5,19 @@
  */
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
  *
  * @author dam2
  */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Customer {
 
     private int idCustomer;
@@ -129,7 +135,7 @@ public class Customer {
         }
         return true;
     }
-    
-    
+
+
 
 }

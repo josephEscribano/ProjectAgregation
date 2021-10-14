@@ -4,40 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="Todas las funcionalidades correctas">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLListCustomer.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xmlFiles/customers.xml" afterDir="false" />
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="funcionalidad customer añadir,buscar por id y lista customers hecha">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Customers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xmlFiles/customer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b829020954e07c09bdb5f69f26d087305e7db982" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/propertiesFiles/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/propertiesFiles/settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOCustomers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DarftDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DarftDAOCustomers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/darftDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DarftDAOCustomers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/itemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLfindCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLfindCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDatePurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDatePurchasesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/PrimerJavaFX-1.0-SNAPSHOT.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLAddCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLAddCustomerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLfindCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLfindCustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FXMLPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Purchase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/textfiles/purchases" beforeDir="false" afterPath="$PROJECT_DIR$/textfiles/purchases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xmlFiles/customers.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +46,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,6 +67,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../xmlProyect" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
   <component name="RecentsManager">
@@ -141,6 +135,8 @@
       <workItem from="1633623552275" duration="3854000" />
       <workItem from="1633768340423" duration="618000" />
       <workItem from="1634137291276" duration="12820000" />
+      <workItem from="1634154388430" duration="163000" />
+      <workItem from="1634228022021" duration="11690000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -198,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633543014727</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="funcionalidad customer añadir,buscar por id y lista customers hecha">
+      <created>1634154443065</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1634154443065</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +239,8 @@
     <MESSAGE value="arreglos varios" />
     <MESSAGE value="error con el delete" />
     <MESSAGE value="Todas las funcionalidades correctas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Todas las funcionalidades correctas" />
+    <MESSAGE value="funcionalidad customer añadir,buscar por id y lista customers hecha" />
+    <option name="LAST_COMMIT_MESSAGE" value="funcionalidad customer añadir,buscar por id y lista customers hecha" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -245,6 +249,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java</url>
           <line>40</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/CustomersServices.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

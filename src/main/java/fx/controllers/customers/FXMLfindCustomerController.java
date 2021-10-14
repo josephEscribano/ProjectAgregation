@@ -31,7 +31,7 @@ public class FXMLfindCustomerController implements Initializable {
     @FXML
     private ListView<Customer> customerList;
     
-     public void searchById() throws ParserConfigurationException {
+     public void searchById()  {
         CustomersServices cs = new CustomersServices();
         customerList.getItems().setAll(cs.searchById(Integer.parseInt(dniBox.getText())));
     }

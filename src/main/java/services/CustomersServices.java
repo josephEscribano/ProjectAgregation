@@ -10,6 +10,7 @@ import java.util.List;
 
 import dao.DAOCustomers;
 import dao.DarftDAOCustomers;
+import dao.DraftDAOItems;
 import javafx.scene.control.Alert;
 import model.Customer;
 
@@ -21,12 +22,13 @@ import javax.xml.parsers.ParserConfigurationException;
  */
 public class CustomersServices {
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    public List<Customer> getAllCustomers() throws ParserConfigurationException {
+
+    public List<Customer> getAllCustomers()  {
         DAOCustomers dc = new DarftDAOCustomers();
         return dc.getAll();
     }
 
-    public List<Customer> searchById(int id) throws ParserConfigurationException {
+    public List<Customer> searchById(int id)  {
         List<Customer> st =  new ArrayList<>();
         DAOCustomers dc = new DarftDAOCustomers();
         st.add(dc.get(id));
@@ -34,18 +36,23 @@ public class CustomersServices {
     }
 
     public void deleteCustomer(Customer customer) {
-
+        DAOCustomers dc = new DarftDAOCustomers();
+        dc.delete(customer);
     }
 
-    public void addCustomer(int customerId, String name, String phone, String address) throws ParserConfigurationException {
+
+
+    public Customer addCustomer(int customerId, String name, String phone, String address)  {
         Customer custo = new Customer(customerId,name,phone,address);
         DAOCustomers dc = new DarftDAOCustomers();
         if (dc.get(customerId) == null){
             dc.save(custo);
         }else{
-            alert.setContentText("El id que has introducido ya existe");
+            alert.setContentText("The id already exist");
             alert.showAndWait();
         }
+
+        return custo;
 
     }
 

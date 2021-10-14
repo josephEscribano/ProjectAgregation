@@ -320,7 +320,7 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(welcome);
     }
     
-    public void chargePurchases() throws ParserConfigurationException {
+    public void chargePurchases() {
         purchasesController.load();
         fxRoot.setCenter(purchases);
     }

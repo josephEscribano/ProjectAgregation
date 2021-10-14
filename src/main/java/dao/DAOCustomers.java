@@ -15,9 +15,9 @@ import java.util.List;
  */
 public interface DAOCustomers {
      
-    Customer get(int id) throws ParserConfigurationException;
+    Customer get(int id);
      
-    List<Customer> getAll() throws ParserConfigurationException;
+    List<Customer> getAll() ;
      
     void save(Customer t);
      

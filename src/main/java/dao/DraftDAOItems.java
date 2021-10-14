@@ -1,5 +1,6 @@
 package dao;
 
+import configuration.ConfigProperties;
 import javafx.scene.control.Alert;
 import model.Item;
 
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class DraftDAOItems implements DAOItems{
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    File file = new File("textfiles/items");
+    File file = new File(ConfigProperties.getInstance().getProperty("FileItem"));
     @Override
     public Item get(int id) {
         List<Item> li = getAll();
@@ -36,7 +37,7 @@ public class DraftDAOItems implements DAOItems{
 
 
         }catch (Exception e){
-            alert.setContentText("error, al leer el fichero");
+            alert.setContentText("error, when read the file");
             alert.showAndWait();
         }
 
@@ -51,7 +52,7 @@ public class DraftDAOItems implements DAOItems{
             bw.write(content);
 
         }catch (IOException e){
-            alert.setContentText("error");
+            alert.setContentText("error, when write the file");
             alert.showAndWait();
         }
 
@@ -81,7 +82,7 @@ public class DraftDAOItems implements DAOItems{
 
 
         }catch (IOException e){
-            alert.setContentText("error");
+            alert.setContentText("error, when delete the item");
             alert.showAndWait();
         }
     }

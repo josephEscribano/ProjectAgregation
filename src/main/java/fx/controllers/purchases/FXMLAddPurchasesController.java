@@ -47,7 +47,7 @@ public class FXMLAddPurchasesController implements Initializable {
     private DatePicker dateBox;
 
     
-    public void load() throws ParserConfigurationException {
+    public void load()  {
         loadCustomersList();
         loadPurchasesList();
         loadItemsList();
@@ -82,7 +82,7 @@ public class FXMLAddPurchasesController implements Initializable {
 
     }
 
-    public void loadCustomersList() throws ParserConfigurationException {
+    public void loadCustomersList()  {
         DAOCustomers ddi = new DarftDAOCustomers();
         List<Customer> lc = ddi.getAll();
         customerBox.getItems().clear();
@@ -106,20 +106,14 @@ public class FXMLAddPurchasesController implements Initializable {
         PurchasesServices ps = new PurchasesServices();
         Customer cu = customerBox.getSelectionModel().getSelectedItem();
         Item it = itemBox.getSelectionModel().getSelectedItem();
+        if (cu != null && it != null && dateBox.getValue() !=null){
+            int idcustomer = cu.getIdCustomer();
+            int iditem = it.getIdItem();
+            LocalDate date = dateBox.getValue();
+            ps.addPurchase(idcustomer,iditem,date);
 
-        try {
-            if (cu != null && it != null && dateBox.getValue() !=null){
-                int idcustomer = cu.getIdCustomer();
-                int iditem = it.getIdItem();
-                LocalDate date = dateBox.getValue();
-                ps.addPurchase(idcustomer,iditem,date);
-
-            }else{
-                alert.setContentText("Necesitas seleccionar todos los elementos");
-                alert.showAndWait();
-            }
-        }catch (Exception e){
-            alert.setContentText("Es necesario que seleeciones todos los campos");
+        }else{
+            alert.setContentText("you need fill all fields");
             alert.showAndWait();
         }
         loadPurchasesList();
