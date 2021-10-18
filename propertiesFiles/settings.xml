@@ -4,4 +4,5 @@
     <entry key="Filepurchases">textfiles/purchases</entry>
     <entry key="XMLCustomer">xmlFiles/customer.xml</entry>
     <entry key="FileItem">textfiles/items</entry>
+    <entry key="mysqlProperties">propertiesFiles/Store-properties.xml</entry>
 </properties>

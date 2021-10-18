@@ -11,12 +11,8 @@ S
 textfiles/items,7\4\745050178572f0da7538c1683726f10ccf5e9a64
 M
 src/main/java/model/Item.java,4\b\4b5d5516ba6ed0a52710aef6faa93182c97f0a33
-a
-1src/main/java/configuration/ConfigProperties.java,6\6\66551be59af692503cd9c115742736c92c60a352
 I
 propertiesFiles/users.yml,f\9\f93711b8a27c088cbdc2265c6d31ac44f0f5ecce
-[
-+src/main/java/configuration/ConfigYaml.java,7\9\79830940932d2d2968b3c8ca934107eb704d8eef
 Q
 !src/main/java/model/Purchase.java,1\6\168dc2404bade36d45cb9cc4e5504196fdedef50
 C
