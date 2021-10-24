@@ -25,6 +25,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DarftDAOCustomers implements DAOCustomers{
     private Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -52,7 +54,7 @@ public class DarftDAOCustomers implements DAOCustomers{
             Customers customerList = (Customers) unmarshaller.unmarshal(Files.newInputStream(xmlFiles));
             lc.addAll(customerList.getCustomer());
         } catch (JAXBException | IOException e) {
-            e.printStackTrace();
+            Logger.getLogger("error, when read the xml customers").log(Level.INFO,e.getMessage());
         }
 
         return lc;
@@ -70,7 +72,7 @@ public class DarftDAOCustomers implements DAOCustomers{
             customerList.getCustomer().add(t);
             marshaller.marshal(customerList,Files.newOutputStream(xmlFiles));
         } catch (JAXBException | IOException e) {
-            e.printStackTrace();
+            Logger.getLogger("error, when save a customer").log(Level.INFO,e.getMessage());
         }
     }
     @Override
@@ -90,7 +92,7 @@ public class DarftDAOCustomers implements DAOCustomers{
             customerList.getCustomer().remove(t);
             marshaller.marshal(customerList,Files.newOutputStream(xmlFiles));
         } catch (JAXBException | IOException e) {
-            e.printStackTrace();
+            Logger.getLogger("error, when delete the customer").log(Level.INFO,e.getMessage());
         }
     }
 
@@ -126,8 +128,7 @@ public class DarftDAOCustomers implements DAOCustomers{
             }
 
         } catch (IOException | SAXException | ParserConfigurationException e) {
-            alert.setContentText("Error al leer el fichero");
-            alert.showAndWait();
+            Logger.getLogger("error, when read xml customer").log(Level.INFO,e.getMessage());
         }
 
         return lc;
@@ -166,8 +167,7 @@ public class DarftDAOCustomers implements DAOCustomers{
             transformer.setOutputProperty(OutputKeys.INDENT,"yes");
             transformer.transform(source,result);
         } catch (ParserConfigurationException | IOException | SAXException | TransformerException e) {
-            alert.setContentText("Error al escribir en el fichero");
-            alert.showAndWait();
+            Logger.getLogger("error, when save the customer").log(Level.INFO,e.getMessage());
         }
     }
 

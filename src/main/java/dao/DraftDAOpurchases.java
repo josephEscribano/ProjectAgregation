@@ -15,6 +15,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import static java.nio.file.StandardOpenOption.*;
 
@@ -26,6 +29,9 @@ public class DraftDAOpurchases implements DAOPurchases{
         return null;
     }
 
+    public List<Purchase> getByItem(int id){
+        return getAll().stream().filter(purchase -> purchase.getIditem() == id).collect(Collectors.toList());
+    }
     @Override
     public List<Purchase> getAll() {
         List<Purchase> lp = new ArrayList<>();
@@ -40,8 +46,8 @@ public class DraftDAOpurchases implements DAOPurchases{
             reader.close();
 
         }catch (IOException e){
-            alert.setContentText("error,when read the purchase file");
-            alert.showAndWait();
+            Logger.getLogger("error,when read the purchase file").log(Level.INFO,e.getMessage());
+
         }
         return lp;
     }
@@ -55,8 +61,7 @@ public class DraftDAOpurchases implements DAOPurchases{
             writer.write(t.toStringTexto(),0,t.toStringTexto().length());
             writer.newLine();
         }catch (IOException e){
-            alert.setContentText("error, when save the purchases");
-            alert.showAndWait();
+            Logger.getLogger("error, when save the purchases.txt").log(Level.INFO,e.getMessage());
         }
     }
 
@@ -82,8 +87,7 @@ public class DraftDAOpurchases implements DAOPurchases{
             }
 
         }catch (IOException e){
-            alert.setContentText("error, when delete the purchase");
-            alert.showAndWait();
+            Logger.getLogger("error, when delete the purchase").log(Level.INFO,e.getMessage());
         }
 
     }

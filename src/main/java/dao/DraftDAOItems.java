@@ -7,6 +7,8 @@ import model.Item;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DraftDAOItems implements DAOItems{
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -37,8 +39,7 @@ public class DraftDAOItems implements DAOItems{
 
 
         }catch (Exception e){
-            alert.setContentText("error, when read the file");
-            alert.showAndWait();
+            Logger.getLogger("error, when read the file item").log(Level.INFO,e.getMessage());
         }
 
         return li;
@@ -52,8 +53,8 @@ public class DraftDAOItems implements DAOItems{
             bw.write(content);
 
         }catch (IOException e){
-            alert.setContentText("error, when write the file");
-            alert.showAndWait();
+            Logger.getLogger("error, when save the item").log(Level.INFO,e.getMessage());
+
         }
 
     }
@@ -82,8 +83,7 @@ public class DraftDAOItems implements DAOItems{
 
 
         }catch (IOException e){
-            alert.setContentText("error, when delete the item");
-            alert.showAndWait();
+            Logger.getLogger("error, when delete the item").log(Level.INFO,e.getMessage());
         }
     }
 

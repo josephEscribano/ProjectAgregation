@@ -28,17 +28,19 @@ public class FXMLDeleteItemController implements Initializable {
     public void deleteItem() {
         Item it = lvlistItems.getSelectionModel().getSelectedItem();
         PurchasesServices ps = new PurchasesServices();
-        confir.setTitle("Remove the purchase");
-        confir.setContentText("¿Do you want remove the purchase too?");
-        Optional<ButtonType> action = confir.showAndWait();
-        if (action.get() == ButtonType.OK){
-            List<Purchase> lp = ps.getPurchasesByItemId(it.getIdItem());
-            for (Purchase p: lp) {
-                ps.deletePurchase(p);
-            }
-        }
-        ItemsServices is = new ItemsServices();
         if (it != null){
+            if (!ps.getPurchasesByItemId(it.getIdItem()).isEmpty()){
+                confir.setTitle("Remove the purchase");
+                confir.setContentText("¿Do you want remove the purchase too?");
+                Optional<ButtonType> action = confir.showAndWait();
+                if (action.get() == ButtonType.OK){
+                    List<Purchase> lp = ps.getPurchasesByItemId(it.getIdItem());
+                    for (Purchase p: lp) {
+                        ps.deletePurchase(p);
+                    }
+                }
+            }
+            ItemsServices is = new ItemsServices();
             lvlistItems.getItems().remove(it);
             is.deleteItem(it);
         }else{
@@ -46,6 +48,9 @@ public class FXMLDeleteItemController implements Initializable {
             alert.showAndWait();
         }
     }
+
+
+
 
     public void loadItems() {
         ItemsServices is = new ItemsServices();

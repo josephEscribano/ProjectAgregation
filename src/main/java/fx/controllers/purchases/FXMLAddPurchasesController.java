@@ -25,6 +25,8 @@ import javafx.util.StringConverter;
 import model.Customer;
 import model.Item;
 import model.Purchase;
+import services.CustomersServices;
+import services.ItemsServices;
 import services.PurchasesServices;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -62,8 +64,8 @@ public class FXMLAddPurchasesController implements Initializable {
     }
 
     public void loadItemsList() {
-        DAOItems di = new DraftDAOItems();
-        List<Item> li= di.getAll();
+        ItemsServices itemsServices = new ItemsServices();
+        List<Item> li= itemsServices.getAll();
         itemBox.getItems().clear();
         for (Item it:li) {
             itemBox.getItems().add(it);
@@ -83,8 +85,8 @@ public class FXMLAddPurchasesController implements Initializable {
     }
 
     public void loadCustomersList()  {
-        DAOCustomers ddi = new DarftDAOCustomers();
-        List<Customer> lc = ddi.getAll();
+        CustomersServices customersServices = new CustomersServices();
+        List<Customer> lc = customersServices.getAllCustomers();
         customerBox.getItems().clear();
         for (Customer cu: lc) {
             customerBox.getItems().add(cu);
