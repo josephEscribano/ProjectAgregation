@@ -1,0 +1,42 @@
+package dao;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class DAOFactory {
+    private static DAOFactory daoFactoryItem;
+    private String sourceItems;
+    private Properties daoProps;
+
+
+    private String PROPERTIES_FILES = "config\\dao-properties.xml";
+
+    public DAOFactory(){
+        try {
+            setDAOTypes(PROPERTIES_FILES);
+        }catch (Exception e){
+            Logger.getLogger(DAOFactory.class.getName()).log(Level.SEVERE,null,e);
+        }
+    }
+
+    private void setDAOTypes(String confiFiles) throws IOException {
+        daoProps = new Properties();
+        daoProps.loadFromXML(Files.newInputStream(Paths.get(confiFiles)));
+    }
+
+    public DAOItems getDAOItems(){
+        DAOItems dao = null;
+        sourceItems = daoProps.getProperty("daoItemsJDBC");
+        if (sourceItems.equals("JDBCDAOItems")){
+            dao = new JDBCDAOItems();
+        }else if (sourceItems.equals("DraftDAOItems")){
+            dao = new DraftDAOItems();
+        }
+
+        return dao;
+    }
+}

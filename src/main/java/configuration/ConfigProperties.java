@@ -32,7 +32,7 @@ public class ConfigProperties {
             try {
                 configurationProperties = new ConfigProperties();
                 configurationProperties.properties = new Properties();
-                configurationProperties.properties.loadFromXML(new FileInputStream("propertiesFiles/settings.xml"));
+                configurationProperties.properties.loadFromXML(new FileInputStream("config/settings.xml"));
             } catch (IOException ex) {
                 Logger.getLogger(ConfigProperties.class.getName()).log(Level.SEVERE, null, ex);
             }

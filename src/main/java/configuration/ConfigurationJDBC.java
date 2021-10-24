@@ -12,7 +12,7 @@ public class ConfigurationJDBC {
 
     private Properties properties;
 
-    private ConfigurationJDBC(){
+    public ConfigurationJDBC(){
         Path path = Paths.get(ConfigProperties.getInstance().getProperty("mysqlProperties"));
         properties = new Properties();
         try {

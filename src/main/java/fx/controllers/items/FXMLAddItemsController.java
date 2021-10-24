@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FXMLAddItemsController implements Initializable {
+
+    private Alert alert = new Alert(Alert.AlertType.INFORMATION);
     @FXML
     private ListView<Item> LVlist;
     @FXML
@@ -29,7 +31,10 @@ public class FXMLAddItemsController implements Initializable {
         String name = nameBox.getText();
         String company = companyBox.getText();
         double price = Double.parseDouble(priceBox.getText());
-        it.save(id,name,company,price);
+        if (!it.save(id,name,company,price)){
+            alert.setContentText("The id item doesn't exist");
+            alert.showAndWait();
+        }
         loadItems();
 
 

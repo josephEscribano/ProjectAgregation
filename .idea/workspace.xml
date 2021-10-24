@@ -4,22 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="Primera conexion a la base de datos">
-      <change afterPath="$PROJECT_DIR$/data/items.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/purchases.txt" afterDir="false" />
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="errores arreglados">
+      <change afterPath="$PROJECT_DIR$/config/dao-properties.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/configuration/JDBCproperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DBConPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b1ca344ee7d18831cec3b217c85cbfcc8a7e495" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertiesFiles/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/propertiesFiles/settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DarftDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DarftDAOCustomers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/textfiles/items" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/textfiles/purchases" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xmlFiles/customer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/customer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertiesFiles/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertiesFiles/store-properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/store-properties.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertiesFiles/users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/users.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/conections/DBConection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DBConection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/ConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/configuration/ConfigProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/ConfigYaml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/configuration/ConfigYaml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/ConfigurationJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/configuration/ConfigurationJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/JdbcDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/JDBCDAOItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/MainJDCB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainJDCB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configuration/ConfigProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configuration/ConfigProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configuration/ConfigYaml.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/configuration/ConfigYaml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +62,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebstoreAD-Solution" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
@@ -147,7 +153,7 @@
       <workItem from="1634228022021" duration="11690000" />
       <workItem from="1634572541643" duration="6269000" />
       <workItem from="1634819461164" duration="149000" />
-      <workItem from="1635087523909" duration="6177000" />
+      <workItem from="1635087523909" duration="15357000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -219,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634578542967</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="errores arreglados">
+      <created>1635093764375</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635093764375</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +272,8 @@
     <MESSAGE value="Todas las funcionalidades correctas" />
     <MESSAGE value="funcionalidad customer añadir,buscar por id y lista customers hecha" />
     <MESSAGE value="Primera conexion a la base de datos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primera conexion a la base de datos" />
+    <MESSAGE value="errores arreglados" />
+    <option name="LAST_COMMIT_MESSAGE" value="errores arreglados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

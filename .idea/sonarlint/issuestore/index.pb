@@ -5,8 +5,6 @@ X
 (src/main/java/dao/darftDAOCustomers.java,c\a\ca0fa9f08f3fc487643b7b5a1955c099314f9502
 S
 #src/main/java/dao/DAOPurchases.java,6\9\693eabfd5fcd71d00035f730f4f4e42c95934753
-M
-src/main/java/model/Item.java,4\b\4b5d5516ba6ed0a52710aef6faa93182c97f0a33
 Q
 !src/main/java/model/Purchase.java,1\6\168dc2404bade36d45cb9cc4e5504196fdedef50
 C

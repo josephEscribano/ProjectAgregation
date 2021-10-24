@@ -8,6 +8,7 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.DAOFactory;
 import dao.DAOItems;
 import dao.DraftDAOItems;
 import javafx.scene.control.Alert;
@@ -18,30 +19,30 @@ import model.Item;
  * @author dam2
  */
 public class ItemsServices {
-    private Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
+    private DAOFactory dao;
+    public ItemsServices(){
+        dao = new DAOFactory();
+    }
     public List<Item> getAll(){
-        DAOItems di = new DraftDAOItems();
-        return di.getAll();
+        return dao.getDAOItems().getAll();
     }
     public Item get(int id){
-        DAOItems di = new DraftDAOItems();
-        return di.get(id);
+        return dao.getDAOItems().get(id);
     }
 
-    public void save(int id, String name, String company, double price){
-        DAOItems di = new DraftDAOItems();
+    public boolean save(int id, String name, String company, double price){
+        boolean confirmacion = false;
         if (get(id) == null){
-            di.save(new Item(id,name,company,price));
-        }else{
-            alert.setContentText("The id already exist");
-            alert.showAndWait();
+            dao.getDAOItems().save(new Item(id,name,company,price));
+            confirmacion = true;
         }
+
+        return confirmacion;
     }
 
 
     public void deleteItem(Item it){
-        DAOItems di = new DraftDAOItems();
-        di.delete(it);
+        dao.getDAOItems().delete(it);
     }
 }
