@@ -49,8 +49,9 @@ public class DraftDAOItems implements DAOItems{
     public void save(Item t) {
         try(FileWriter writer = new FileWriter(file,true);
             BufferedWriter bw = new BufferedWriter(writer)){
-            String content = "\n" + t.toStringTextFile();
+            String content = t.toStringTextFile() ;
             bw.write(content);
+            bw.newLine();
 
         }catch (IOException e){
             Logger.getLogger("error, when save the item").log(Level.INFO,e.getMessage());
@@ -70,7 +71,6 @@ public class DraftDAOItems implements DAOItems{
         li.remove(t);
         try(FileWriter writer = new FileWriter(file,false);
             BufferedWriter bw = new BufferedWriter(writer)){
-
             for (int i = 0; i < li.size(); i++) {
                 if (i == li.size() -1){
                     String content = li.get(i).toStringTextFile();

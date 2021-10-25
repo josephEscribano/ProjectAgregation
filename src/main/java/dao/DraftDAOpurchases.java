@@ -58,7 +58,7 @@ public class DraftDAOpurchases implements DAOPurchases{
         options[0] = APPEND;
         options[1] = WRITE;
         try(BufferedWriter writer = Files.newBufferedWriter(file,options)) {
-            writer.write(t.toStringTexto(),0,t.toStringTexto().length());
+            writer.write(t.toStringTexto());
             writer.newLine();
         }catch (IOException e){
             Logger.getLogger("error, when save the purchases.txt").log(Level.INFO,e.getMessage());

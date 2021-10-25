@@ -7,5 +7,3 @@ S
 #src/main/java/dao/DAOPurchases.java,6\9\693eabfd5fcd71d00035f730f4f4e42c95934753
 Q
 !src/main/java/model/Purchase.java,1\6\168dc2404bade36d45cb9cc4e5504196fdedef50
-C
-textfiles/purchases,6\d\6d12ff09024beb16fc36e5324c16f761ffdbdbe8
