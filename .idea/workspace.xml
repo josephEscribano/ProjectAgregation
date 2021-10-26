@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="errores arreglados">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +45,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../daoJDBCLucia" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
   <component name="RecentsManager">
@@ -93,17 +94,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.MainFX" />
+      <item itemvalue="Application.MainJDCB" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainFX" />
@@ -149,6 +143,11 @@
       <workItem from="1634819461164" duration="149000" />
       <workItem from="1635087523909" duration="15357000" />
       <workItem from="1635150243210" duration="3753000" />
+      <workItem from="1635167795368" duration="2497000" />
+      <workItem from="1635172071155" duration="645000" />
+      <workItem from="1635172816178" duration="617000" />
+      <workItem from="1635244806651" duration="815000" />
+      <workItem from="1635246013055" duration="2094000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
