@@ -8,10 +8,11 @@ package services;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
+import dao.DAOFactory;
 import dao.DAOPurchases;
-import dao.DraftDAOpurchases;
+import model.Customer;
+import model.Item;
 import model.Purchase;
 
 /**
@@ -19,10 +20,13 @@ import model.Purchase;
  * @author dam2
  */
 public class PurchasesServices {
+    private DAOFactory dao;
 
+    public PurchasesServices() {
+        dao = new DAOFactory();
+    }
     public List<Purchase> getAllPurchases() {
-        DAOPurchases dp = new DraftDAOpurchases();
-        return dp.getAll();
+        return dao.getDAOPurchases().getAll();
     }
 
     public ArrayList<Purchase> searchByDate(String date) {
@@ -36,28 +40,27 @@ public class PurchasesServices {
         return purch;
     }
     public List<Purchase> getPurchasesByItemId(int id) {
-        DraftDAOpurchases dp = new DraftDAOpurchases();
-        return dp.getByItem(id);
+
+        return dao.getDAOPurchases().getPurchasesByItemId(id);
     }
 
     public void deletePurchase(Purchase purchase) {
-        DAOPurchases dp = new DraftDAOpurchases();
-        dp.delete(purchase);
+        dao.getDAOPurchases().delete(purchase);
 
 
      }
 
-    public void addPurchase(int customerId, int itemId, LocalDate date) {
-        Purchase newPurchase = new Purchase(customerId,itemId,date);
-        DAOPurchases dp = new DraftDAOpurchases();
-        List<Purchase> lp = dp.getAll();
+    public void addPurchase(Customer customer, Item item, LocalDate date) {
+        Purchase newPurchase = new Purchase(customer,item,date);
+
+        List<Purchase> lp = dao.getDAOPurchases().getAll();
         if (lp.isEmpty()){
             newPurchase.setIdPurchase(1);
         }else{
             newPurchase.setIdPurchase(lp.get(lp.size() -1).getIdPurchase() + 1);
         }
 
-        dp.save(newPurchase);
+        dao.getDAOPurchases().save(newPurchase);
 
     }
 

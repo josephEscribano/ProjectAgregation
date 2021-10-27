@@ -1,5 +1,9 @@
 package dao;
 
+import dao.jdbcDAO.JDBCDAOItems;
+import dao.jdbcDAO.JDBCDAOcustomers;
+import dao.jdbcDAO.JDBCDAOpurchases;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -9,7 +13,7 @@ import java.util.logging.Logger;
 
 public class DAOFactory {
     private static DAOFactory daoFactoryItem;
-    private String sourceItems;
+
     private Properties daoProps;
 
 
@@ -29,14 +33,38 @@ public class DAOFactory {
     }
 
     public DAOItems getDAOItems(){
+        String sourceItems;
         DAOItems dao = null;
         sourceItems = daoProps.getProperty("daoItemsJDBC");
         if (sourceItems.equals("JDBCDAOItems")){
             dao = new JDBCDAOItems();
-        }else if (sourceItems.equals("DraftDAOItems")){
-            dao = new DraftDAOItems();
         }
 
         return dao;
     }
+
+    public DAOCustomers getDAOCustomers(){
+        String sourceCustomers;
+        DAOCustomers dao = null;
+        sourceCustomers = daoProps.getProperty("daoCustomersJDBC");
+        if (sourceCustomers.equals("JDBCDAOcustomers")){
+            dao = new JDBCDAOcustomers();
+        }
+
+        return dao;
+
+    }
+
+    public DAOPurchases getDAOPurchases(){
+        String sourcesPurchses;
+        DAOPurchases dao = null;
+        sourcesPurchses = daoProps.getProperty("daoCustomersJDBC");
+        if (sourcesPurchses.equals("JDBCDAOcustomers")){
+            dao = new JDBCDAOpurchases();
+        }
+
+        return dao;
+    }
+
+
 }

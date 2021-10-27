@@ -4,9 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="errores arreglados">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="commit antes de borrar las clases">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOcustomers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOpurchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dao-properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/dao-properties.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOPurchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DarftDAOCustomers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/JDBCDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/MainJDCB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainJDCB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Purchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +167,8 @@
       <workItem from="1635172071155" duration="645000" />
       <workItem from="1635172816178" duration="617000" />
       <workItem from="1635244806651" duration="815000" />
-      <workItem from="1635246013055" duration="2094000" />
+      <workItem from="1635246013055" duration="4022000" />
+      <workItem from="1635331885967" duration="4886000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -226,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635093764375</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="commit antes de borrar las clases">
+      <created>1635249120580</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1635249120580</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,35 +295,7 @@
     <MESSAGE value="funcionalidad customer añadir,buscar por id y lista customers hecha" />
     <MESSAGE value="Primera conexion a la base de datos" />
     <MESSAGE value="errores arreglados" />
-    <option name="LAST_COMMIT_MESSAGE" value="errores arreglados" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/services/PurchasesServices.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/DraftDAOItems.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/DraftDAOpurchases.java</url>
-          <line>31</line>
-          <properties class="dao.DraftDAOpurchases" method="getByItem">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="commit antes de borrar las clases" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit antes de borrar las clases" />
   </component>
 </project>

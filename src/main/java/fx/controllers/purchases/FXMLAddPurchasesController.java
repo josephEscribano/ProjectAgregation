@@ -11,10 +11,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import dao.DAOCustomers;
-import dao.DAOItems;
-import dao.DarftDAOCustomers;
-import dao.DraftDAOItems;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -28,8 +24,6 @@ import model.Purchase;
 import services.CustomersServices;
 import services.ItemsServices;
 import services.PurchasesServices;
-
-import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * FXML Controller class
@@ -109,10 +103,8 @@ public class FXMLAddPurchasesController implements Initializable {
         Customer cu = customerBox.getSelectionModel().getSelectedItem();
         Item it = itemBox.getSelectionModel().getSelectedItem();
         if (cu != null && it != null && dateBox.getValue() !=null){
-            int idcustomer = cu.getIdCustomer();
-            int iditem = it.getIdItem();
             LocalDate date = dateBox.getValue();
-            ps.addPurchase(idcustomer,iditem,date);
+            ps.addPurchase(cu,it,date);
 
         }else{
             alert.setContentText("you need fill all fields");

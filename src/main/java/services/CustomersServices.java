@@ -9,12 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.DAOCustomers;
-import dao.DarftDAOCustomers;
-import dao.DraftDAOItems;
+import dao.DAOFactory;
 import javafx.scene.control.Alert;
 import model.Customer;
-
-import javax.xml.parsers.ParserConfigurationException;
 
 /**
  *
@@ -22,31 +19,32 @@ import javax.xml.parsers.ParserConfigurationException;
  */
 public class CustomersServices {
     private Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private DAOFactory dao;
 
+    public CustomersServices(){
+        dao = new DAOFactory();
+    }
     public List<Customer> getAllCustomers()  {
-        DAOCustomers dc = new DarftDAOCustomers();
-        return dc.getAll();
+        return dao.getDAOCustomers().getAll();
     }
 
     public List<Customer> searchById(int id)  {
         List<Customer> st =  new ArrayList<>();
-        DAOCustomers dc = new DarftDAOCustomers();
-        st.add(dc.get(id));
+        st.add(dao.getDAOCustomers().get(id));
         return st;
     }
 
     public void deleteCustomer(Customer customer) {
-        DAOCustomers dc = new DarftDAOCustomers();
-        dc.delete(customer);
+        dao.getDAOCustomers().delete(customer);
     }
 
 
 
     public Customer addCustomer(int customerId, String name, String phone, String address)  {
         Customer custo = new Customer(customerId,name,phone,address);
-        DAOCustomers dc = new DarftDAOCustomers();
-        if (dc.get(customerId) == null){
-            dc.save(custo);
+
+        if (dao.getDAOCustomers().get(customerId) == null){
+            dao.getDAOCustomers().save(custo);
         }else{
             alert.setContentText("The id already exist");
             alert.showAndWait();

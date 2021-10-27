@@ -5,13 +5,9 @@
  */
 package services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dao.DAOFactory;
-import dao.DAOItems;
-import dao.DraftDAOItems;
-import javafx.scene.control.Alert;
 import model.Item;
 
 /**
@@ -21,6 +17,7 @@ import model.Item;
 public class ItemsServices {
 
     private DAOFactory dao;
+
     public ItemsServices(){
         dao = new DAOFactory();
     }

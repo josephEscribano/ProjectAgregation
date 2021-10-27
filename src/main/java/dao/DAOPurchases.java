@@ -15,6 +15,8 @@ import java.util.List;
 public interface DAOPurchases {
 
     Purchase get(int id);
+
+    public List<Purchase> getPurchasesByItemId(int id);
      
     List<Purchase> getAll();
      

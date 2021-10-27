@@ -15,8 +15,8 @@ import java.time.LocalDate;
 public class Purchase {
 
     private int idPurchase;
-    private int idCustomer;
-    private int Iditem;
+    private Customer customer;
+    private Item item;
     private LocalDate date;
 
 
@@ -26,27 +26,18 @@ public class Purchase {
         //this.idPurchase = aumento++;
     }
 
-    public Purchase(int idPurchase, int idCustomer, int iditem, LocalDate date) {
+    public Purchase(int idPurchase, Customer customer, Item item, LocalDate date) {
         this.idPurchase = idPurchase;
-        this.idCustomer = idCustomer;
-        Iditem = iditem;
+        this.customer = customer;
+        this.item = item;
         this.date = date;
     }
 
-    public Purchase(int idCustomer, int item, LocalDate date) {
+    public Purchase(Customer customer, Item item, LocalDate date) {
         //this.idPurchase = aumento++;
-        this.idCustomer = idCustomer;
-        this.Iditem = item;
+        this.customer = customer;
+        this.item = item;
         this.date = date;
-    }
-
-    public Purchase(String s){
-        String [] array = s.split(";");
-        this.idPurchase = Integer.parseInt(array[0]);
-        this.idCustomer = Integer.parseInt(array[1]);
-        this.Iditem = Integer.parseInt(array[2]);
-        this.date = LocalDate.parse(array[3]);
-
     }
 
     public int getIdPurchase() {
@@ -57,20 +48,20 @@ public class Purchase {
         this.idPurchase = idPurchase;
     }
 
-    public int getIdCustomer() {
-        return idCustomer;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setIdCustomer(int idCustomer) {
-        this.idCustomer = idCustomer;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public int getIditem() {
-        return Iditem;
+    public Item getItem() {
+        return item;
     }
 
-    public void setIditem(int iditem) {
-        this.Iditem = iditem;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public LocalDate getDate() {
@@ -83,15 +74,15 @@ public class Purchase {
 
     @Override
     public String toString() {
-        return "ID: " + idPurchase + "  Customer: " + idCustomer + "  Item: " + Iditem + "  Date: " + date;
+        return "ID: " + idPurchase + "  Customer: " + customer.getIdCustomer() + "  Item: " + item.getIdItem() + "  Date: " + date;
     }
     
     public String toStringForClientInfo() {
-        return "ID: " + idPurchase + "  Item: " + Iditem + "  Date: " + date + "\n";
+        return "ID: " + idPurchase + "  Item: " + item.getIdItem()+ "  Date: " + date + "\n";
     }
 
     public String toStringTexto() {
-        return idPurchase + ";" + idCustomer + ";" + Iditem + ";" + date;
+        return idPurchase + ";" + customer.getIdCustomer() + ";" + item.getIdItem() + ";" + date;
     }
 
     @Override

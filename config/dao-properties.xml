@@ -2,7 +2,6 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <entry key="daoItemsJDBC">JDBCDAOItems</entry>
-    <entry key="daoCustomers">DraftDAOCustomers</entry>
-    <entry key="daoPurchases">DraftDAOpurchases</entry>
-    <entry key="daoItemsFiles">DraftDAOItems</entry>
+    <entry key="daoCustomersJDBC">JDBCDAOcustomers</entry>
+    <entry key="daoPurchasesJDBC">JDBCDAOpurchases.java</entry>
 </properties>

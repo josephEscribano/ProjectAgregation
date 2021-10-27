@@ -18,22 +18,19 @@ public class Review {
     private String title;
     private String description;
     private LocalDate date;
-    private int customerId;
-    private int itemId;
-    private int purchaseId;
+    private Purchase purchase;
 
     public Review() {
     }
 
-    public Review(int idReview, int rating, String title, String description, int customerId, int itemId, int purchaseId) {
+    public Review(int idReview, int rating, String title, String description, Purchase purchase) {
         this.idReview = idReview;
         this.rating = rating;
         this.title = title;
         this.description = description;
         this.date = LocalDate.now();
-        this.customerId = customerId;
-        this.itemId = itemId;
-        this.purchaseId = purchaseId;
+        this.purchase = purchase;
+
     }
 
     public int getIdReview() {
@@ -76,59 +73,20 @@ public class Review {
         this.date = date;
     }
 
-    public int getCustomer() {
-        return customerId;
-    }
 
-    public void setCustomer(int customer) {
-        this.customerId = customer;
-    }
-
-    public int getItem() {
-        return itemId;
-    }
-
-    public void setItem(int item) {
-        this.itemId = item;
-    }
-
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
-
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
-    public int getPurchaseId() {
-        return purchaseId;
-    }
-
-    public void setPurchaseId(int purchaseId) {
-        this.purchaseId = purchaseId;
-    }
-    
     
 
     @Override
     public String toString() {
-        return "No. " + idReview + "  Item: " + itemId + "\nRating: " + rating + "\nTitle: " + title + "\nComment: " + description + "\nDate: " + date + "  Customer: " + customerId + "  Purchase no. " + purchaseId;
+        return "No. " + idReview + "  Item: " + purchase.getItem().getIdItem() + "\nRating: " + rating + "\nTitle: " + title + "\nComment: " + description + "\nDate: " + date + "  Customer: " + purchase.getCustomer().getIdCustomer() + "  Purchase no. " + purchase.getIdPurchase();
     }
 
     public String toStringVisual() {
-        return "No. " + idReview + "  Item: " + itemId + "  Rating: " + rating + "\nTitle: " + title + "\nComment: " + description + "\nDate: " + date + "\n____________________________________________________________\n";
+        return "No. " + idReview + "  Item: " + purchase.getItem().getIdItem() + "  Rating: " + rating + "\nTitle: " + title + "\nComment: " + description + "\nDate: " + date + "\n____________________________________________________________\n";
     }
 
     public String toStringTexto() {
-        return idReview + ":" + rating + ":" + title + ":" + description + ":" + date + ":" + customerId + ":" + itemId + ":" + purchaseId;
+        return idReview + ":" + rating + ":" + title + ":" + description + ":" + date + ":" + purchase.getCustomer().getIdCustomer() + ":" + purchase.getItem().getIdItem() + ":" + purchase.getIdPurchase();
     }
 
 }

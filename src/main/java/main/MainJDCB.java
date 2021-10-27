@@ -1,6 +1,6 @@
 package main;
 
-import dao.JDBCDAOItems;
+import dao.jdbcDAO.JDBCDAOItems;
 
 public class MainJDCB {
     public static void main(String[] args) {

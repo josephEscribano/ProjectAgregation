@@ -1,5 +1,7 @@
-package dao;
+package dao.jdbcDAO;
 
+import dao.DAOItems;
+import dao.DBConection;
 import model.Item;
 
 import java.sql.*;
