@@ -28,6 +28,12 @@ public class Item {
         this.price = price;
     }
 
+    public Item(String name, String company, double price) {
+        this.name = name;
+        this.company = company;
+        this.price = price;
+    }
+
     public Item(String s) {
         String [] array = s.split(";");
         this.idItem = Integer.parseInt(array[0]);

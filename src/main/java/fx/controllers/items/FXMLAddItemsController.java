@@ -17,8 +17,6 @@ public class FXMLAddItemsController implements Initializable {
     @FXML
     private ListView<Item> LVlist;
     @FXML
-    private TextField idBox;
-    @FXML
     private TextField nameBox;
     @FXML
     private TextField companyBox;
@@ -27,11 +25,11 @@ public class FXMLAddItemsController implements Initializable {
 
     public void saveItem() {
         ItemsServices it = new ItemsServices();
-        int id = Integer.parseInt(idBox.getText());
         String name = nameBox.getText();
         String company = companyBox.getText();
         double price = Double.parseDouble(priceBox.getText());
-        if (!it.save(id,name,company,price)){
+
+        if (!it.save(new Item(name,company,price))){
             alert.setContentText("The id item doesn't exist");
             alert.showAndWait();
         }

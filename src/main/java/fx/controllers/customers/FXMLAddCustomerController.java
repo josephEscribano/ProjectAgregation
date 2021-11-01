@@ -26,8 +26,6 @@ import javax.xml.parsers.ParserConfigurationException;
 public class FXMLAddCustomerController implements Initializable {
     private Alert alert = new Alert(AlertType.ERROR);
     @FXML
-    private TextField idBox;
-    @FXML
     private TextField nameBox;
     @FXML
     private TextField phoneBox;
@@ -43,11 +41,12 @@ public class FXMLAddCustomerController implements Initializable {
 
     public void addCustomer()  {
         CustomersServices cs = new CustomersServices();
-        int id = Integer.parseInt(idBox.getText());
+        //int id = Integer.parseInt(idBox.getText());
         String name = nameBox.getText();
         String phone = phoneBox.getText();
         String address = addressBox.getText();
-        cs.addCustomer(id,name,phone,address);
+
+        cs.addCustomer(new Customer(name,phone,address));
         loadCustomersList();
     }
 

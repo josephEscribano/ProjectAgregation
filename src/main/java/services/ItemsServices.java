@@ -28,10 +28,10 @@ public class ItemsServices {
         return dao.getDAOItems().get(id);
     }
 
-    public boolean save(int id, String name, String company, double price){
+    public boolean save(Item item){
         boolean confirmacion = false;
-        if (get(id) == null){
-            dao.getDAOItems().save(new Item(id,name,company,price));
+        if (get(item.getIdItem()) == null){
+            dao.getDAOItems().save(item);
             confirmacion = true;
         }
 

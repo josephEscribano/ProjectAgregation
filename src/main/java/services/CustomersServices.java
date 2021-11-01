@@ -40,17 +40,16 @@ public class CustomersServices {
 
 
 
-    public Customer addCustomer(int customerId, String name, String phone, String address)  {
-        Customer custo = new Customer(customerId,name,phone,address);
+    public Customer addCustomer(Customer customer)  {
 
-        if (dao.getDAOCustomers().get(customerId) == null){
-            dao.getDAOCustomers().save(custo);
+        if (dao.getDAOCustomers().get(customer.getIdCustomer()) == null){
+            dao.getDAOCustomers().save(customer);
         }else{
             alert.setContentText("The id already exist");
             alert.showAndWait();
         }
 
-        return custo;
+        return customer;
 
     }
 

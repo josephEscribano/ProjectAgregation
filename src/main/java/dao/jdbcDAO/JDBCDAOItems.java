@@ -3,6 +3,7 @@ package dao.jdbcDAO;
 import dao.DAOItems;
 import dao.DBConection;
 import model.Item;
+import utils.Querys;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,8 +11,11 @@ import java.util.List;
 
 public class JDBCDAOItems implements DAOItems {
 
-    private static final String SELECT_items_QUERY = "select iditem,name,company,price from Items";
+
+    private static final String UPDATE_ITEM_QUERY = "update Items set ? = ? ";
+
     private Connection connection;
+    private Statement statement;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
@@ -32,25 +36,23 @@ public class JDBCDAOItems implements DAOItems {
     @Override
     public List<Item> getAll() {
         List<Item> items = new ArrayList<>();
-        preparedStatement = null;
-        resultSet = null;
-
         try{
             connection = db.getConnection();
-            preparedStatement = connection.prepareStatement(SELECT_items_QUERY);
+            preparedStatement = connection.prepareStatement(Querys.SELECT_items_QUERY);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
                 Item item = new Item(resultSet.getInt(1)
                         ,resultSet.getString(2)
                         ,resultSet.getString(3)
-                        ,resultSet.getInt(4));
+                        ,resultSet.getDouble(4));
                 items.add(item);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally {
-            db.releaseResources(preparedStatement,resultSet);
+            db.releaseResources(resultSet);
+            db.releaseResources(preparedStatement);
             db.closeConnection(connection);
 
         }
@@ -59,16 +61,32 @@ public class JDBCDAOItems implements DAOItems {
 
     @Override
     public void save(Item t) {
+        try{
+            connection = db.getConnection();
+            preparedStatement = connection.prepareStatement(Querys.INSERT_ITEM_QUERY);
+
+            preparedStatement.setString(1,t.getName());
+            preparedStatement.setString(2,t.getCompany());
+            preparedStatement.setDouble(3,t.getPrice());
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            db.releaseResources(resultSet);
+            db.releaseResources(preparedStatement);
+            db.closeConnection(connection);
+        }
+
 
     }
 
     @Override
     public void update(Item t) {
-
     }
 
     @Override
     public void delete(Item t) {
 
     }
+
 }

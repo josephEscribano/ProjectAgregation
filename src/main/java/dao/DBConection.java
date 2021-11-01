@@ -23,15 +23,34 @@ public class DBConection {
             throwables.printStackTrace();
         }
     }
-
-    public void releaseResources(PreparedStatement preparedStatement,ResultSet resultSet) {
+    public void releaseResources(PreparedStatement preparedStatement) {
 
         try {
             if (preparedStatement != null){
                 preparedStatement.close();
             }
+        } catch (SQLException e) {
+            Logger.getLogger(DBConection.class.getName()).log(Level.SEVERE,null,e);
+        }
+
+    }
+
+    public void releaseResources(ResultSet resultSet) {
+
+        try {
             if (resultSet != null){
                 resultSet.close();
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DBConection.class.getName()).log(Level.SEVERE,null,e);
+        }
+
+    }
+    public void releaseResources(Statement statement) {
+
+        try {
+            if (statement != null){
+                statement.close();
             }
         } catch (SQLException e) {
             Logger.getLogger(DBConection.class.getName()).log(Level.SEVERE,null,e);
