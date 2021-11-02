@@ -19,9 +19,9 @@ public interface DAOCustomers {
      
     List<Customer> getAll() ;
      
-    void save(Customer t);
+    Customer save(Customer t);
      
-    void update(Customer t);
+    Customer update(Customer t);
      
     void delete(Customer t);
 }

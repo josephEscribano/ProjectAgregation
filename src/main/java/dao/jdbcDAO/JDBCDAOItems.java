@@ -12,7 +12,6 @@ import java.util.List;
 public class JDBCDAOItems implements DAOItems {
 
 
-    private static final String UPDATE_ITEM_QUERY = "update Items set ? = ? ";
 
     private Connection connection;
     private Statement statement;
@@ -23,9 +22,6 @@ public class JDBCDAOItems implements DAOItems {
 
     public JDBCDAOItems(){
         db = new DBConection();
-    }
-    public void showCostumers(){
-
     }
 
     @Override
@@ -38,7 +34,7 @@ public class JDBCDAOItems implements DAOItems {
         List<Item> items = new ArrayList<>();
         try{
             connection = db.getConnection();
-            preparedStatement = connection.prepareStatement(Querys.SELECT_items_QUERY);
+            preparedStatement = connection.prepareStatement(Querys.SELECT_ITEMS_QUERY);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
@@ -60,15 +56,23 @@ public class JDBCDAOItems implements DAOItems {
     }
 
     @Override
-    public void save(Item t) {
+    public Item save(Item item) {
         try{
             connection = db.getConnection();
-            preparedStatement = connection.prepareStatement(Querys.INSERT_ITEM_QUERY);
+            preparedStatement = connection.prepareStatement(Querys.INSERT_ITEM_QUERY,Statement.RETURN_GENERATED_KEYS);
 
-            preparedStatement.setString(1,t.getName());
-            preparedStatement.setString(2,t.getCompany());
-            preparedStatement.setDouble(3,t.getPrice());
+            preparedStatement.setString(1,item.getName());
+            preparedStatement.setString(2,item.getCompany());
+            preparedStatement.setDouble(3,item.getPrice());
             preparedStatement.executeUpdate();
+            resultSet = preparedStatement.getGeneratedKeys();
+            int auto_id = 0;
+            if (resultSet.next()){
+                auto_id = resultSet.getInt(1);
+
+            }
+
+            item.setIdItem(auto_id);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally {
@@ -77,11 +81,29 @@ public class JDBCDAOItems implements DAOItems {
             db.closeConnection(connection);
         }
 
+        return item;
 
     }
 
     @Override
-    public void update(Item t) {
+    public Item update(Item item) {
+        try{
+            connection = db.getConnection();
+            preparedStatement = connection.prepareStatement(Querys.UPDATE_ITEM_QUERY);
+            preparedStatement.setString(1,item.getName());
+            preparedStatement.setString(2,item.getCompany());
+            preparedStatement.setDouble(3,item.getPrice());
+            preparedStatement.setInt(4,item.getIdItem());
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            db.releaseResources(resultSet);
+            db.releaseResources(preparedStatement);
+            db.closeConnection(connection);
+        }
+        return item;
     }
 
     @Override

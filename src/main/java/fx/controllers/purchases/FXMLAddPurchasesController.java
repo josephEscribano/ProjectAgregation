@@ -10,6 +10,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -44,19 +45,18 @@ public class FXMLAddPurchasesController implements Initializable {
 
     
     public void load()  {
+        loadItemsList();
         loadCustomersList();
         loadPurchasesList();
-        loadItemsList();
+
     }
-    
+
     public void loadPurchasesList() {
         PurchasesServices ps = new PurchasesServices();
+        List<Purchase> listPurchases = ps.getAllPurchases();
         purchaseList.getItems().clear();
-        purchaseList.getItems().addAll(ps.getAllPurchases());
-
-
+        purchaseList.getItems().addAll(listPurchases);
     }
-
     public void loadItemsList() {
         ItemsServices itemsServices = new ItemsServices();
         List<Item> li= itemsServices.getAll();
@@ -102,15 +102,16 @@ public class FXMLAddPurchasesController implements Initializable {
         PurchasesServices ps = new PurchasesServices();
         Customer cu = customerBox.getSelectionModel().getSelectedItem();
         Item it = itemBox.getSelectionModel().getSelectedItem();
+
         if (cu != null && it != null && dateBox.getValue() !=null){
             LocalDate date = dateBox.getValue();
-            ps.addPurchase(cu,it,date);
+            purchaseList.getItems().add(ps.addPurchase(cu,it,date));
 
         }else{
             alert.setContentText("you need fill all fields");
             alert.showAndWait();
         }
-        loadPurchasesList();
+
 
 
 

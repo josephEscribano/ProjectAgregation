@@ -18,9 +18,9 @@ public interface DAOItems {
      
     List<Item> getAll();
      
-    void save(Item t);
+    Item save(Item t);
      
-    void update(Item t);
+    Item update(Item t);
      
     void delete(Item t);
 

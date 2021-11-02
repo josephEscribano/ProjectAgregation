@@ -20,9 +20,9 @@ public interface DAOPurchases {
      
     List<Purchase> getAll();
      
-    void save(Purchase t);
+    Purchase save(Purchase t);
      
-    void update(Purchase t);
+    Purchase update(Purchase t);
      
     void delete(Purchase t);
 }

@@ -41,13 +41,11 @@ public class FXMLAddCustomerController implements Initializable {
 
     public void addCustomer()  {
         CustomersServices cs = new CustomersServices();
-        //int id = Integer.parseInt(idBox.getText());
         String name = nameBox.getText();
         String phone = phoneBox.getText();
         String address = addressBox.getText();
+        customerList.getItems().add(cs.addCustomer(new Customer(name,phone,address)));
 
-        cs.addCustomer(new Customer(name,phone,address));
-        loadCustomersList();
     }
 
     /**

@@ -1,8 +1,4 @@
 
-S
-#src/main/java/dao/DAOCustomers.java,b\e\be950fe20fdb36e0f9fd8747f9094e5b45f478c8
-O
-src/main/java/dao/DAOItems.java,9\d\9d2b955ae85097d9fcb2c088cdeb26e24e2fbf6b
 I
 config/dao-properties.xml,2\2\22c2a4540e935f70ceca67d44e83169354775eed
 C
@@ -11,15 +7,15 @@ K
 config/store-properties.xml,c\6\c6a763b13a369716e996ef5eb5a0ccd33adc94f0
 q
 Asrc/main/java/fx/controllers/reviews/FXMLAddReviewController.java,b\a\baf81894340a509b2abc899e205e8084d037b845
-p
-@src/main/java/fx/controllers/purchases/FXMLDeleteController.java,9\5\959be05476b6b823bcb0119912890c9bd919e358
-p
-@src/main/java/fx/controllers/items/FXMLDeleteItemController.java,1\0\106f88e44ee34e0b81893cfc5632411f91880e8c
-o
-?src/main/java/fx/controllers/items/FXMLListItemsController.java,c\7\c77465dd99446a6857a656f54c60279f5d005b18
+O
+src/main/java/model/Review.java,7\b\7bb951e4cc17946bec61d495a2a1b264f058b4e3
 x
 Hsrc/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java,0\9\09be0fb26da1382b052adf34756c13cd3a27a201
-v
-Fsrc/main/java/fx/controllers/customers/FXMLfindCustomerController.java,a\a\aa8f3efcd9c9ee7b3813aa7346915c039ceb3896
+R
+"src/main/java/dao/DBConection.java,7\3\7310350038574562a9ffd27b510b770ac9f618f5
+p
+@src/main/java/fx/controllers/purchases/FXMLDeleteController.java,9\5\959be05476b6b823bcb0119912890c9bd919e358
+o
+?src/main/java/fx/controllers/items/FXMLListItemsController.java,c\7\c77465dd99446a6857a656f54c60279f5d005b18
 v
 Fsrc/main/java/fx/controllers/customers/FXMLListCustomerController.java,1\5\15488958c5d69bc2ee6e2df712660d0889bea658

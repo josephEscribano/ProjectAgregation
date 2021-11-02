@@ -25,17 +25,15 @@ public class CustomersServices {
         dao = new DAOFactory();
     }
 
-    public boolean updateCustomers(Customer customer){
-
+    public Customer updateCustomers(Customer customer){
+        return dao.getDAOCustomers().update(customer);
     }
     public List<Customer> getAllCustomers()  {
         return dao.getDAOCustomers().getAll();
     }
 
-    public List<Customer> searchById(int id)  {
-        List<Customer> st =  new ArrayList<>();
-        st.add(dao.getDAOCustomers().get(id));
-        return st;
+    public Customer searchById(int id)  {
+        return dao.getDAOCustomers().get(id);
     }
 
     public void deleteCustomer(Customer customer) {
@@ -46,14 +44,7 @@ public class CustomersServices {
 
     public Customer addCustomer(Customer customer)  {
 
-        if (dao.getDAOCustomers().get(customer.getIdCustomer()) == null){
-            dao.getDAOCustomers().save(customer);
-        }else{
-            alert.setContentText("The id already exist");
-            alert.showAndWait();
-        }
-
-        return customer;
+        return dao.getDAOCustomers().save(customer);
 
     }
 

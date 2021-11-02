@@ -25,6 +25,9 @@ public class PurchasesServices {
     public PurchasesServices() {
         dao = new DAOFactory();
     }
+    public Purchase updatePurchases(Purchase purchase){
+        return dao.getDAOPurchases().update(purchase);
+    }
     public List<Purchase> getAllPurchases() {
         return dao.getDAOPurchases().getAll();
     }
@@ -50,17 +53,9 @@ public class PurchasesServices {
 
      }
 
-    public void addPurchase(Customer customer, Item item, LocalDate date) {
+    public Purchase addPurchase(Customer customer, Item item, LocalDate date) {
         Purchase newPurchase = new Purchase(customer,item,date);
-
-        List<Purchase> lp = dao.getDAOPurchases().getAll();
-        if (lp.isEmpty()){
-            newPurchase.setIdPurchase(1);
-        }else{
-            newPurchase.setIdPurchase(lp.get(lp.size() -1).getIdPurchase() + 1);
-        }
-
-        dao.getDAOPurchases().save(newPurchase);
+        return dao.getDAOPurchases().save(newPurchase);
 
     }
 

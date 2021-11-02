@@ -21,6 +21,10 @@ public class ItemsServices {
     public ItemsServices(){
         dao = new DAOFactory();
     }
+
+    public Item updateItem(Item item){
+        return dao.getDAOItems().update(item);
+    }
     public List<Item> getAll(){
         return dao.getDAOItems().getAll();
     }
@@ -28,14 +32,9 @@ public class ItemsServices {
         return dao.getDAOItems().get(id);
     }
 
-    public boolean save(Item item){
-        boolean confirmacion = false;
-        if (get(item.getIdItem()) == null){
-            dao.getDAOItems().save(item);
-            confirmacion = true;
-        }
+    public Item save(Item item){
+        return dao.getDAOItems().save(item);
 
-        return confirmacion;
     }
 
 

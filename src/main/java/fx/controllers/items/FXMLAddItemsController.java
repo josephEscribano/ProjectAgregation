@@ -29,11 +29,7 @@ public class FXMLAddItemsController implements Initializable {
         String company = companyBox.getText();
         double price = Double.parseDouble(priceBox.getText());
 
-        if (!it.save(new Item(name,company,price))){
-            alert.setContentText("The id item doesn't exist");
-            alert.showAndWait();
-        }
-        loadItems();
+        LVlist.getItems().add(it.save(new Item(name,company,price)));
 
 
     }
