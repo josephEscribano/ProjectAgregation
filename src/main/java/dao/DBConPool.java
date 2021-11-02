@@ -31,7 +31,6 @@ public class DBConPool {
         basicDataSource.setPassword(properties.getPassword());
         basicDataSource.setUrl(properties.getUrlDB());
 
-
         return basicDataSource;
     }
 

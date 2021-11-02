@@ -3,6 +3,7 @@ package dao.jdbcDAO;
 import dao.DAOPurchases;
 import model.Purchase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JDBCDAOpurchases implements DAOPurchases {
@@ -18,7 +19,8 @@ public class JDBCDAOpurchases implements DAOPurchases {
 
     @Override
     public List<Purchase> getAll() {
-        return null;
+        List<Purchase> lista = new ArrayList<>();
+        return lista;
     }
 
     @Override

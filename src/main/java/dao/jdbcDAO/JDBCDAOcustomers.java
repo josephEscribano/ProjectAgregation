@@ -76,8 +76,17 @@ public class JDBCDAOcustomers implements DAOCustomers {
     }
 
     @Override
-    public void update(Customer t) {
+    public void update(Customer customer) {
+        try{
+            connection = db.getConnection();
+            preparedStatement = connection.prepareStatement(Querys.UPDATE_CUSTOMER_NAME_QUERY);
+            preparedStatement.setString(1,customer.getName());
+            preparedStatement.setInt(2,customer.getIdCustomer());
+            preparedStatement.executeUpdate();
 
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     @Override

@@ -19,7 +19,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#listItems" text="List Items" />
                   <MenuItem mnemonicParsing="false" text="Find by ID" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeDeleteItems" text="Delete Item" />
-                  <MenuItem mnemonicParsing="false" text="Update Item" />
+                  <MenuItem mnemonicParsing="false" onAction="#chargeUpdateItem" text="Update Item" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Customers">
@@ -28,6 +28,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#chargeListCustomer" text="List Customers" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeFindCustomer" text="Find by ID" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeDeleteCustomer" text="Delete Customer" />
+                  <MenuItem mnemonicParsing="false" onAction="#chargeUpdateCustomer" text="Update Customer" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Purchases">
@@ -35,6 +36,7 @@
                 <MenuItem mnemonicParsing="false" onAction="#chargePurchases" text="Add Purchase" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeDatePurchases" text="Find by Date" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeDelete" text="Delete Purchase" />
+                  <MenuItem mnemonicParsing="false" onAction="#chargeUpdatePurchases" text="Update Purchases" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Reviews">

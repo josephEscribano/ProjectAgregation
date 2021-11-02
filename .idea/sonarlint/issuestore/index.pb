@@ -11,3 +11,15 @@ K
 config/store-properties.xml,c\6\c6a763b13a369716e996ef5eb5a0ccd33adc94f0
 q
 Asrc/main/java/fx/controllers/reviews/FXMLAddReviewController.java,b\a\baf81894340a509b2abc899e205e8084d037b845
+p
+@src/main/java/fx/controllers/purchases/FXMLDeleteController.java,9\5\959be05476b6b823bcb0119912890c9bd919e358
+p
+@src/main/java/fx/controllers/items/FXMLDeleteItemController.java,1\0\106f88e44ee34e0b81893cfc5632411f91880e8c
+o
+?src/main/java/fx/controllers/items/FXMLListItemsController.java,c\7\c77465dd99446a6857a656f54c60279f5d005b18
+x
+Hsrc/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java,0\9\09be0fb26da1382b052adf34756c13cd3a27a201
+v
+Fsrc/main/java/fx/controllers/customers/FXMLfindCustomerController.java,a\a\aa8f3efcd9c9ee7b3813aa7346915c039ceb3896
+v
+Fsrc/main/java/fx/controllers/customers/FXMLListCustomerController.java,1\5\15488958c5d69bc2ee6e2df712660d0889bea658
