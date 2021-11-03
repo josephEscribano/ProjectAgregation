@@ -6,19 +6,18 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import model.Item;
-import model.Purchase;
 import services.ItemsServices;
 import services.PurchasesServices;
+import utils.Constantes;
 
 import java.net.URL;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class FXMLDeleteItemController implements Initializable {
-    private Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    private Alert confir = new Alert(Alert.AlertType.CONFIRMATION);
     public ListView<Item> lvlistItems;
+    private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private final Alert confir = new Alert(Alert.AlertType.CONFIRMATION);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -28,28 +27,35 @@ public class FXMLDeleteItemController implements Initializable {
     public void deleteItem() {
         Item it = lvlistItems.getSelectionModel().getSelectedItem();
         PurchasesServices ps = new PurchasesServices();
-        if (it != null){
-            if (!ps.getPurchasesByItemId(it.getIdItem()).isEmpty()){
-                confir.setTitle("Remove the purchase");
-                confir.setContentText("¿Do you want remove the purchase too?");
+        ItemsServices itemsServices = new ItemsServices();
+        if (it != null) {
+            if (!ps.getPurchasesByItemId(it.getIdItem()).isEmpty()) {
+                confir.setTitle(Constantes.TITLE_MESSAGE);
+                confir.setContentText(Constantes.NOTICE_DELETED);
                 Optional<ButtonType> action = confir.showAndWait();
-                if (action.get() == ButtonType.OK){
-                    List<Purchase> lp = ps.getPurchasesByItemId(it.getIdItem());
-                    for (Purchase p: lp) {
-                        ps.deletePurchase(p);
+                if (action.get() == ButtonType.OK) {
+                    if (itemsServices.deletePurchasesAndItem(it)) {
+                        lvlistItems.getItems().remove(it);
+                    } else {
+                        alert.setContentText(Constantes.ITEM_NOT_DELETED);
+                        alert.showAndWait();
                     }
                 }
+            } else {
+                if (itemsServices.deleteItem(it)) {
+                    lvlistItems.getItems().remove(it);
+                } else {
+                    alert.setContentText(Constantes.ITEM_NOT_DELETED);
+                    alert.showAndWait();
+                }
             }
-            ItemsServices is = new ItemsServices();
-            lvlistItems.getItems().remove(it);
-            is.deleteItem(it);
-        }else{
-            alert.setContentText("Select a Item");
+
+
+        } else {
+            alert.setContentText(Constantes.SELECT_ITEM);
             alert.showAndWait();
         }
     }
-
-
 
 
     public void loadItems() {

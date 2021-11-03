@@ -3,6 +3,7 @@ package dao.jdbcDAO;
 import dao.DAOCustomers;
 import dao.DBConection;
 import model.Customer;
+import model.Item;
 import utils.Querys;
 
 import java.sql.*;
@@ -24,18 +25,7 @@ public class JDBCDAOcustomers implements DAOCustomers {
 
     @Override
     public Customer get(int id) {
-        Customer customer = null;
-        try{
-            connection = db.getConnection();
-            preparedStatement = connection.prepareStatement(Querys.SELECT_CUSTOMERS_QUERY);
-            preparedStatement.setInt(1,id);
-            resultSet = preparedStatement.executeQuery();
-
-            customer = new Customer(resultSet.getString(2),resultSet.getString(3),resultSet.getString(4));
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return customer;
+        return null;
     }
 
     @Override
@@ -126,13 +116,39 @@ public class JDBCDAOcustomers implements DAOCustomers {
         boolean confirmacion = false;
         try{
             connection = db.getConnection();
-            preparedStatement = connection.prepareStatement(Querys.DELETE_PURCHASES_QUERY);
+            preparedStatement = connection.prepareStatement(Querys.DELETE_CUSTOMER_QUERY);
             preparedStatement.setInt(1,customer.getIdCustomer());
             preparedStatement.executeUpdate();
             confirmacion = true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            db.releaseResources(resultSet);
+            db.releaseResources(preparedStatement);
+            db.closeConnection(connection);
         }
         return confirmacion;
+    }
+
+    @Override
+    public Customer findCustomerByID(int id) {
+        Customer customer = null;
+        try {
+            connection = db.getConnection();
+            preparedStatement = connection.prepareStatement(Querys.SELECT_CUSTOMER_BY_ID_QUERY);
+            preparedStatement.setInt(1,id);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                customer = new Customer(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4));
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            db.releaseResources(resultSet);
+            db.releaseResources(preparedStatement);
+            db.closeConnection(connection);
+        }
+        return customer;
     }
 }

@@ -22,7 +22,12 @@ public interface DAOItems {
      
     boolean update(Item t);
      
-    void delete(Item t);
+    boolean deletePurchasesAndItem(Item t);
+
+    boolean deleteItem(Item item);
+
+    Item findItemByID(int id);
 
 
+    void closePool();
 }

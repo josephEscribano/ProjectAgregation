@@ -5,10 +5,8 @@
  */
 package services;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import dao.DAOCustomers;
 import dao.DAOFactory;
 import javafx.scene.control.Alert;
 import model.Customer;
@@ -33,14 +31,12 @@ public class CustomersServices {
     }
 
     public Customer searchById(int id)  {
-        return dao.getDAOCustomers().get(id);
+        return dao.getDAOCustomers().findCustomerByID(id);
     }
 
     public boolean deleteCustomer(Customer customer) {
         return dao.getDAOCustomers().delete(customer);
     }
-
-
 
     public boolean addCustomer(Customer customer)  {
 

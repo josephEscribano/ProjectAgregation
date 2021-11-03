@@ -15,13 +15,22 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import services.ItemsServices;
 
 /**
  *
  * @author Laura
  */
 public class MainFX extends Application {
-    
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        ItemsServices itemsServices = new ItemsServices();
+        itemsServices.closePool();
+    }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loaderMenu = new FXMLLoader(
@@ -37,6 +46,10 @@ public class MainFX extends Application {
         primaryStage.show();
         //para no poder maximizar pantalla y
         primaryStage.setResizable(false);
+
+
+
+
     }
 
     /**
@@ -45,5 +58,6 @@ public class MainFX extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     
 }

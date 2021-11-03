@@ -7,8 +7,6 @@ package fx.controllers.items;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ListView;
 import model.Item;
 import services.ItemsServices;
@@ -18,7 +16,6 @@ import java.util.ResourceBundle;
 
 /**
  * FXML Controller class
- *
  */
 public class FXMLListItemsController implements Initializable {
 
@@ -30,6 +27,7 @@ public class FXMLListItemsController implements Initializable {
         itemsList.getItems().clear();
         itemsList.getItems().addAll(is.getAll());
     }
+
     /**
      * Initializes the controller class.
      */

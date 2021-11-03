@@ -24,4 +24,6 @@ public interface DAOCustomers {
     boolean update(Customer t);
      
     boolean delete(Customer t);
+
+    Customer findCustomerByID(int id);
 }

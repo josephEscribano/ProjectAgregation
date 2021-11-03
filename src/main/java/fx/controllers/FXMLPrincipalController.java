@@ -101,6 +101,9 @@ public class FXMLPrincipalController implements Initializable {
     private AnchorPane updatePurchases;
     private FXMLUpdatePurchasesController fxmlUpdatePurchasesController;
 
+    private AnchorPane findItem;
+    private FXMLFindItemController fxmlFindItemController;
+
 
 
     public void preloadLogin() {
@@ -359,6 +362,21 @@ public class FXMLPrincipalController implements Initializable {
 
     }
 
+    public void preloadFindItem() {
+
+        try {
+            FXMLLoader loaderMenu = new FXMLLoader(
+                    getClass().getResource(
+                            "/fxml/items/FXMLFindItem.fxml"));
+            findItem = loaderMenu.load();
+            fxmlFindItemController = loaderMenu.getController();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
 
 
 
@@ -379,7 +397,6 @@ public class FXMLPrincipalController implements Initializable {
         fxRoot.setCenter(purchases);
     }
     public void chargeDatePurchases() {
-        datePurchasesController.loadPurchasesList();
         fxRoot.setCenter(datePurchases);
     }
     public void chargeDelete() {
@@ -444,6 +461,9 @@ public class FXMLPrincipalController implements Initializable {
         fxmlUpdatePurchasesController.loadItems();
         fxRoot.setCenter(updatePurchases);
     }
+    public void chargeFindItem() {
+        fxRoot.setCenter(findItem);
+    }
 
     /**
      * Initializes the controller class.
@@ -471,6 +491,7 @@ public class FXMLPrincipalController implements Initializable {
         preloadUpdateCustomer();
         preloadUpdateItem();
         preloadUpdatePurchases();
+        preloadFindItem();
 
         chargeLogin();
 

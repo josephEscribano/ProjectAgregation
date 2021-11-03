@@ -10,7 +10,6 @@ public class DBConection {
     public Connection getConnection() throws SQLException {
         Connection connection = DBConPool.getInstance().getConnection();
 
-        System.out.println("Connected to DB");
         return connection;
     }
 

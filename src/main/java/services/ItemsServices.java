@@ -36,9 +36,19 @@ public class ItemsServices {
         return dao.getDAOItems().save(item);
 
     }
+    public boolean deletePurchasesAndItem(Item it){
+        return dao.getDAOItems().deletePurchasesAndItem(it);
+    }
 
+    public boolean deleteItem(Item item){
+        return dao.getDAOItems().deleteItem(item);
+    }
 
-    public void deleteItem(Item it){
-        dao.getDAOItems().delete(it);
+    public Item findItemByID(int id){
+        return dao.getDAOItems().findItemByID(id);
+    }
+
+    public void closePool(){
+        dao.getDAOItems().closePool();
     }
 }

@@ -6,12 +6,6 @@
 package fx.controllers.purchases;
 
 
-import java.net.URL;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.stream.Collectors;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -25,6 +19,12 @@ import model.Purchase;
 import services.CustomersServices;
 import services.ItemsServices;
 import services.PurchasesServices;
+import utils.Constantes;
+
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.ResourceBundle;
 
 /**
  * FXML Controller class
@@ -32,7 +32,7 @@ import services.PurchasesServices;
  * @author Laura
  */
 public class FXMLAddPurchasesController implements Initializable {
-    private Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
     @FXML
     private ComboBox<Customer> customerBox;
@@ -43,8 +43,8 @@ public class FXMLAddPurchasesController implements Initializable {
     @FXML
     private DatePicker dateBox;
 
-    
-    public void load()  {
+
+    public void load() {
         loadItemsList();
         loadCustomersList();
         loadPurchasesList();
@@ -57,11 +57,12 @@ public class FXMLAddPurchasesController implements Initializable {
         purchaseList.getItems().clear();
         purchaseList.getItems().addAll(listPurchases);
     }
+
     public void loadItemsList() {
         ItemsServices itemsServices = new ItemsServices();
-        List<Item> li= itemsServices.getAll();
+        List<Item> li = itemsServices.getAll();
         itemBox.getItems().clear();
-        for (Item it:li) {
+        for (Item it : li) {
             itemBox.getItems().add(it);
         }
         itemBox.setConverter(new StringConverter<Item>() {
@@ -78,11 +79,11 @@ public class FXMLAddPurchasesController implements Initializable {
 
     }
 
-    public void loadCustomersList()  {
+    public void loadCustomersList() {
         CustomersServices customersServices = new CustomersServices();
         List<Customer> lc = customersServices.getAllCustomers();
         customerBox.getItems().clear();
-        for (Customer cu: lc) {
+        for (Customer cu : lc) {
             customerBox.getItems().add(cu);
         }
         customerBox.setConverter(new StringConverter<Customer>() {
@@ -103,22 +104,20 @@ public class FXMLAddPurchasesController implements Initializable {
         Customer cu = customerBox.getSelectionModel().getSelectedItem();
         Item it = itemBox.getSelectionModel().getSelectedItem();
         LocalDate date = dateBox.getValue();
-        Purchase purchase = new Purchase(cu,it,date);
-        if (cu != null && it != null && dateBox.getValue() !=null){
-            if (ps.addPurchase(purchase)){
+        Purchase purchase = new Purchase(cu, it, date);
+        if (cu != null && it != null && dateBox.getValue() != null) {
+            if (ps.addPurchase(purchase)) {
                 purchaseList.getItems().add(purchase);
-            }else{
-                alert.setContentText("could not added the purchases");
+            } else {
+                alert.setContentText(Constantes.PURCHASE_NOT_ADDED);
                 alert.showAndWait();
             }
 
 
-        }else{
-            alert.setContentText("you need fill all fields");
+        } else {
+            alert.setContentText(Constantes.NOTICE_FIELDS);
             alert.showAndWait();
         }
-
-
 
 
     }

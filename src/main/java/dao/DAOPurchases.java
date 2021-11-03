@@ -7,7 +7,9 @@ package dao;
 
 import model.Customer;
 import model.Purchase;
+import model.Review;
 
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -17,7 +19,9 @@ public interface DAOPurchases {
 
     Purchase get(int id);
 
-    public List<Purchase> getPurchasesByItemId(int id);
+    List<Purchase> getPurchasesByItemId(int id);
+
+    List<Purchase> getPurchasesByReviewId(int id);
      
     List<Purchase> getAll();
      
@@ -26,5 +30,7 @@ public interface DAOPurchases {
     boolean update(Purchase t);
 
     List<Purchase> searchCustomerByid(int id );
-    void delete(Purchase t);
+    boolean delete(Purchase t);
+
+    List<Purchase> findPurchaseByDate(java.util.Date date);
 }

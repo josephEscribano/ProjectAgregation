@@ -17,7 +17,7 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#chargeAddItems" text="Add Item" />
                   <MenuItem mnemonicParsing="false" onAction="#listItems" text="List Items" />
-                  <MenuItem mnemonicParsing="false" text="Find by ID" />
+                  <MenuItem mnemonicParsing="false" onAction="#chargeFindItem" text="Find by ID" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeDeleteItems" text="Delete Item" />
                   <MenuItem mnemonicParsing="false" onAction="#chargeUpdateItem" text="Update Item" />
                </items>

@@ -5,9 +5,6 @@
  */
 package fx.controllers.customers;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -15,6 +12,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ListView;
 import model.Customer;
 import services.CustomersServices;
+import services.PurchasesServices;
+import utils.Constantes;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * FXML Controller class
@@ -22,7 +24,8 @@ import services.CustomersServices;
  * @author Laura
  */
 public class FXMLdeleteCustomerController implements Initializable {
-    private Alert alert = new Alert(AlertType.INFORMATION);
+    private final Alert alert = new Alert(AlertType.INFORMATION);
+
     @FXML
     private ListView<Customer> customerBox;
 
@@ -30,21 +33,25 @@ public class FXMLdeleteCustomerController implements Initializable {
         CustomersServices cs = new CustomersServices();
         customerBox.getItems().setAll(cs.getAllCustomers());
     }
-    
+
     public void deleteCustomer() {
         CustomersServices cs = new CustomersServices();
+        PurchasesServices purchasesServices = new PurchasesServices();
         Customer customer = customerBox.getSelectionModel().getSelectedItem();
-        if ( customer!= null){
-            if (cs.deleteCustomer(customer)){
-                customerBox.getItems().remove(customer);
-            }else{
-                alert.setContentText("could not remove the customer");
+        if (customer != null) {
+            if (purchasesServices.getPurchasesByClientId(customer.getIdCustomer()).isEmpty()) {
+                if (cs.deleteCustomer(customer)) {
+                    customerBox.getItems().remove(customer);
+                } else {
+                    alert.setContentText(Constantes.CUSTOMER_NOT_DELETED);
+                    alert.showAndWait();
+                }
+            } else {
+                alert.setContentText(Constantes.EXIST_PURCHASE_ASSOCIATED);
                 alert.showAndWait();
             }
-
-
-        }else{
-            alert.setContentText("Select a customer");
+        } else {
+            alert.setContentText(Constantes.SELECT_CUSTOMER);
             alert.showAndWait();
         }
 

@@ -5,15 +5,17 @@
  */
 package fx.controllers.purchases;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ListView;
-import services.PurchasesServices;
 import model.Purchase;
+import services.PurchasesServices;
+import utils.Constantes;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * FXML Controller class
@@ -21,7 +23,7 @@ import model.Purchase;
  * @author dam2
  */
 public class FXMLDeleteController implements Initializable {
-    private Alert alert = new Alert(AlertType.INFORMATION);
+    private final Alert alert = new Alert(AlertType.INFORMATION);
     @FXML
     private ListView<Purchase> purchaseBox;
 
@@ -30,23 +32,34 @@ public class FXMLDeleteController implements Initializable {
         PurchasesServices ps = new PurchasesServices();
         purchaseBox.getItems().clear();
         purchaseBox.getItems().addAll(ps.getAllPurchases());
-     }
-    
-    public void deletePurchase(){
+    }
+
+    public void deletePurchase() {
 
         Purchase p = purchaseBox.getSelectionModel().getSelectedItem();
         PurchasesServices ps = new PurchasesServices();
-        if (p != null){
-            purchaseBox.getItems().remove(p);
-            ps.deletePurchase(p);
-        }else{
-            alert.setContentText("You need select a element");
+        if (p != null) {
+            if (ps.getPurchasesByReviewId(p.getIdPurchase()).isEmpty()) {
+                if (ps.deletePurchase(p)) {
+                    purchaseBox.getItems().remove(p);
+                } else {
+                    alert.setContentText(Constantes.PURCHASE_NOT_DELETED);
+                    alert.showAndWait();
+                }
+            } else {
+                alert.setContentText(Constantes.EXIST_REVIEW_ASSOCIATED);
+                alert.showAndWait();
+            }
+
+
+        } else {
+            alert.setContentText(Constantes.SELECT_PURCHASE);
             alert.showAndWait();
         }
 
 
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 

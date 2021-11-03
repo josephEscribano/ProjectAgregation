@@ -5,19 +5,17 @@
  */
 package fx.controllers.customers;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import model.Customer;
 import services.CustomersServices;
+import utils.Constantes;
 
-import javax.xml.parsers.ParserConfigurationException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * FXML Controller class
@@ -25,24 +23,30 @@ import javax.xml.parsers.ParserConfigurationException;
  * @author Laura
  */
 public class FXMLfindCustomerController implements Initializable {
-
+    private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
     @FXML
     private TextField dniBox;
     @FXML
     private ListView<Customer> customerList;
-    
-     public void searchById()  {
+
+    public void searchById() {
         CustomersServices cs = new CustomersServices();
-        customerList.getItems().setAll(cs.searchById(Integer.parseInt(dniBox.getText())));
+        Customer customer = cs.searchById(Integer.parseInt(dniBox.getText()));
+        if (customer != null) {
+            customerList.getItems().clear();
+            customerList.getItems().add(customer);
+        } else {
+            alert.setContentText(Constantes.CUSTOMER_NOT_EXIST);
+            alert.showAndWait();
+        }
     }
-    
-    
+
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+    }
+
 }

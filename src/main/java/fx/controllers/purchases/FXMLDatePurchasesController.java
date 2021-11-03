@@ -5,15 +5,20 @@
  */
 package fx.controllers.purchases;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
+import model.Purchase;
 import services.PurchasesServices;
+import utils.Constantes;
+
+import java.net.URL;
+import java.sql.Date;
+import java.time.ZoneId;
+import java.util.List;
+import java.util.ResourceBundle;
 
 
 /**
@@ -22,13 +27,24 @@ import services.PurchasesServices;
  * @author Laura
  */
 public class FXMLDatePurchasesController implements Initializable {
-
+    private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
     @FXML
     private DatePicker dateBox;
     @FXML
-    private ListView purchaseList;
+    private ListView<Purchase> purchaseList;
 
-    public void loadPurchasesList() {
+
+    public void searchByDate() {
+        PurchasesServices purchasesServices = new PurchasesServices();
+        java.util.Date date = Date.from(dateBox.getValue().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+
+        List<Purchase> listPurchases = purchasesServices.findPurchaseByDate(date);
+        if (!listPurchases.isEmpty()) {
+            purchaseList.getItems().setAll(listPurchases);
+        } else {
+            alert.setContentText(Constantes.PURCHASE_NOT_EXIST);
+            alert.showAndWait();
+        }
     }
 
     @Override
@@ -36,6 +52,5 @@ public class FXMLDatePurchasesController implements Initializable {
 
     }
 
-    public void searchByDate(ActionEvent actionEvent) {
-    }
+
 }

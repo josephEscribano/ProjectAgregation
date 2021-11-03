@@ -37,4 +37,14 @@ public class DBConPool {
     public Connection getConnection() throws SQLException {
         return pool.getConnection();
     }
+
+    public void closePool()  {
+        try {
+            pool.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+    }
 }

@@ -5,14 +5,10 @@
  */
 package services;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import dao.DAOFactory;
-import dao.DAOPurchases;
-import model.Customer;
-import model.Item;
 import model.Purchase;
 
 /**
@@ -21,6 +17,12 @@ import model.Purchase;
  */
 public class PurchasesServices {
     private DAOFactory dao;
+
+
+    public ArrayList<Purchase> searchByDate(String date) {
+        ArrayList<Purchase> purch =  null;
+        return purch;
+    }
 
     public PurchasesServices() {
         dao = new DAOFactory();
@@ -32,30 +34,32 @@ public class PurchasesServices {
         return dao.getDAOPurchases().getAll();
     }
 
-    public ArrayList<Purchase> searchByDate(String date) {
-        ArrayList<Purchase> purch =  null;
-        return purch;
-    }
+
 
     public List<Purchase> getPurchasesByClientId(int id) {
-        List<Purchase> purch =  null;
-
-        return purch;
+        return dao.getDAOPurchases().searchCustomerByid(id);
     }
+
     public List<Purchase> getPurchasesByItemId(int id) {
 
         return dao.getDAOPurchases().getPurchasesByItemId(id);
     }
 
-    public void deletePurchase(Purchase purchase) {
-        dao.getDAOPurchases().delete(purchase);
+    public List<Purchase> getPurchasesByReviewId(int id){
+        return dao.getDAOPurchases().getPurchasesByReviewId(id);
+    }
 
-
+    public boolean deletePurchase(Purchase purchase) {
+        return dao.getDAOPurchases().delete(purchase);
      }
 
     public boolean addPurchase(Purchase purchase) {
         return dao.getDAOPurchases().save(purchase);
 
+    }
+
+    public List<Purchase> findPurchaseByDate(java.util.Date date){
+        return dao.getDAOPurchases().findPurchaseByDate(date);
     }
 
 }

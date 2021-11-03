@@ -7,11 +7,3 @@ K
 config/store-properties.xml,c\6\c6a763b13a369716e996ef5eb5a0ccd33adc94f0
 q
 Asrc/main/java/fx/controllers/reviews/FXMLAddReviewController.java,b\a\baf81894340a509b2abc899e205e8084d037b845
-O
-src/main/java/model/Review.java,7\b\7bb951e4cc17946bec61d495a2a1b264f058b4e3
-R
-"src/main/java/dao/DBConection.java,7\3\7310350038574562a9ffd27b510b770ac9f618f5
-p
-@src/main/java/fx/controllers/purchases/FXMLDeleteController.java,9\5\959be05476b6b823bcb0119912890c9bd919e358
-o
-?src/main/java/fx/controllers/items/FXMLListItemsController.java,c\7\c77465dd99446a6857a656f54c60279f5d005b18

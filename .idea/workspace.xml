@@ -4,27 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="hechos los update screen, hacer condigo">
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="hechos todos los update,save y read falta delete y control del usuario">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLFindItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLFindItem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOCustomers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOPurchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DBConPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DBConPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DBConection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DBConection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOcustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOcustomers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOpurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOpurchases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLfindCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLfindCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLListItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLListItemsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLUpdateItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLUpdateItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDatePurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDatePurchasesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLUpdatePurchasesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLUpdatePurchasesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Querys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Querys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLAddCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLAddCustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLdeleteCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLdeleteCustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLfindCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLfindCustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLListItemsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLListItemsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDatePurchasesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDatePurchasesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDeleteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDeleteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FXMLPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FXMLPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/MainFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" afterDir="false" />
@@ -43,8 +66,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Tag Library Descriptor" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -301,5 +324,26 @@
     <MESSAGE value="errores arreglados" />
     <MESSAGE value="commit antes de borrar las clases" />
     <option name="LAST_COMMIT_MESSAGE" value="commit antes de borrar las clases" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/MainFX.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

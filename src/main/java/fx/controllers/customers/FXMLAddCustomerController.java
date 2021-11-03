@@ -5,9 +5,6 @@
  */
 package fx.controllers.customers;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -16,15 +13,16 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import model.Customer;
 import services.CustomersServices;
+import utils.Constantes;
 
-import javax.xml.parsers.ParserConfigurationException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * FXML Controller class
- *
  */
 public class FXMLAddCustomerController implements Initializable {
-    private Alert alert = new Alert(AlertType.ERROR);
+    private final Alert alert = new Alert(AlertType.ERROR);
     @FXML
     private TextField nameBox;
     @FXML
@@ -34,25 +32,23 @@ public class FXMLAddCustomerController implements Initializable {
     @FXML
     private ListView<Customer> customerList;
 
-    public void loadCustomersList()  {
+    public void loadCustomersList() {
         CustomersServices cs = new CustomersServices();
         customerList.getItems().setAll(cs.getAllCustomers());
-     }
+    }
 
-    public void addCustomer()  {
+    public void addCustomer() {
         CustomersServices cs = new CustomersServices();
         String name = nameBox.getText();
         String phone = phoneBox.getText();
         String address = addressBox.getText();
-        Customer customer = new Customer(name,phone,address);
-        if (cs.addCustomer(customer)){
+        Customer customer = new Customer(name, phone, address);
+        if (cs.addCustomer(customer)) {
             customerList.getItems().add(customer);
-        }else{
-            alert.setContentText("could not added the customer");
+        } else {
+            alert.setContentText(Constantes.CUSTOMER_NOT_ADDED);
             alert.showAndWait();
         }
-
-
     }
 
     /**
