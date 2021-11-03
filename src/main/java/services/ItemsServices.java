@@ -22,7 +22,7 @@ public class ItemsServices {
         dao = new DAOFactory();
     }
 
-    public Item updateItem(Item item){
+    public boolean updateItem(Item item){
         return dao.getDAOItems().update(item);
     }
     public List<Item> getAll(){
@@ -32,7 +32,7 @@ public class ItemsServices {
         return dao.getDAOItems().get(id);
     }
 
-    public Item save(Item item){
+    public boolean save(Item item){
         return dao.getDAOItems().save(item);
 
     }

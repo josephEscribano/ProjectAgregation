@@ -35,8 +35,14 @@ public class FXMLdeleteCustomerController implements Initializable {
         CustomersServices cs = new CustomersServices();
         Customer customer = customerBox.getSelectionModel().getSelectedItem();
         if ( customer!= null){
-            customerBox.getItems().remove(customer);
-            cs.deleteCustomer(customer);
+            if (cs.deleteCustomer(customer)){
+                customerBox.getItems().remove(customer);
+            }else{
+                alert.setContentText("could not remove the customer");
+                alert.showAndWait();
+            }
+
+
         }else{
             alert.setContentText("Select a customer");
             alert.showAndWait();

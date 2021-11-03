@@ -5,6 +5,7 @@
  */
 package dao;
 
+import model.Customer;
 import model.Purchase;
 
 import java.util.List;
@@ -20,9 +21,10 @@ public interface DAOPurchases {
      
     List<Purchase> getAll();
      
-    Purchase save(Purchase t);
+    boolean save(Purchase t);
      
-    Purchase update(Purchase t);
-     
+    boolean update(Purchase t);
+
+    List<Purchase> searchCustomerByid(int id );
     void delete(Purchase t);
 }

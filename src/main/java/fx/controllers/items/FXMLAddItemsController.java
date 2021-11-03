@@ -28,8 +28,14 @@ public class FXMLAddItemsController implements Initializable {
         String name = nameBox.getText();
         String company = companyBox.getText();
         double price = Double.parseDouble(priceBox.getText());
+        Item item = new Item(name,company,price);
+        if (it.save(item)){
+            LVlist.getItems().add(item);
+        }else{
+            alert.setContentText("could not added the item");
+            alert.showAndWait();
+        }
 
-        LVlist.getItems().add(it.save(new Item(name,company,price)));
 
 
     }

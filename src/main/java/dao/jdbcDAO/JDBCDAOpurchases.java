@@ -36,6 +36,30 @@ public class JDBCDAOpurchases implements DAOPurchases {
     }
 
     @Override
+    public List<Purchase> searchCustomerByid(int id) {
+        List<Purchase> list = new ArrayList<>();
+        try{
+            connection = db.getConnection();
+            preparedStatement = connection.prepareStatement(Querys.SELECT_PURCHASES_CUSTOMER_QUERY);
+            preparedStatement.setInt(2,id);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                Purchase purchase = new Purchase(resultSet.getInt(1)
+                        ,new Customer(resultSet.getInt(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6))
+                        ,new Item(resultSet.getInt(7),resultSet.getString(8),resultSet.getString(9),resultSet.getDouble(10))
+                        ,new java.sql.Date(resultSet.getDate(2).getTime()).toLocalDate());
+                list.add(purchase);
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return list;
+    }
+
+
+    @Override
     public List<Purchase> getAll() {
         List<Purchase> lista = new ArrayList<>();
         try{
@@ -62,7 +86,8 @@ public class JDBCDAOpurchases implements DAOPurchases {
     }
 
     @Override
-    public Purchase save(Purchase purchase) {
+    public boolean save(Purchase purchase) {
+        boolean confirmacion = false;
         try{
             connection = db.getConnection();
             preparedStatement = connection.prepareStatement(Querys.INSERT_PURCHASE_QUERY,Statement.RETURN_GENERATED_KEYS);
@@ -77,7 +102,10 @@ public class JDBCDAOpurchases implements DAOPurchases {
                 auto_id = resultSet.getInt(1);
 
             }
+            confirmacion = true;
             purchase.setIdPurchase(auto_id);
+
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally {
@@ -85,11 +113,12 @@ public class JDBCDAOpurchases implements DAOPurchases {
             db.releaseResources(preparedStatement);
             db.closeConnection(connection);
         }
-        return purchase;
+        return confirmacion;
     }
 
     @Override
-    public Purchase update(Purchase purchase) {
+    public boolean update(Purchase purchase) {
+        boolean confirmacion = false;
         try {
             connection = db.getConnection();
             preparedStatement = connection.prepareStatement(Querys.UPDATE_PURCHASES_QUERY);
@@ -98,7 +127,7 @@ public class JDBCDAOpurchases implements DAOPurchases {
             preparedStatement.setInt(2,purchase.getIdPurchase());
 
             preparedStatement.executeUpdate();
-
+            confirmacion = true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally {
@@ -106,12 +135,14 @@ public class JDBCDAOpurchases implements DAOPurchases {
             db.releaseResources(preparedStatement);
             db.closeConnection(connection);
         }
-        return purchase;
+        return confirmacion;
 
     }
 
+
+
     @Override
-    public void delete(Purchase t) {
+    public void delete(Purchase purchase) {
 
     }
 }

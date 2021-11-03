@@ -44,7 +44,14 @@ public class FXMLAddCustomerController implements Initializable {
         String name = nameBox.getText();
         String phone = phoneBox.getText();
         String address = addressBox.getText();
-        customerList.getItems().add(cs.addCustomer(new Customer(name,phone,address)));
+        Customer customer = new Customer(name,phone,address);
+        if (cs.addCustomer(customer)){
+            customerList.getItems().add(customer);
+        }else{
+            alert.setContentText("could not added the customer");
+            alert.showAndWait();
+        }
+
 
     }
 

@@ -102,10 +102,16 @@ public class FXMLAddPurchasesController implements Initializable {
         PurchasesServices ps = new PurchasesServices();
         Customer cu = customerBox.getSelectionModel().getSelectedItem();
         Item it = itemBox.getSelectionModel().getSelectedItem();
-
+        LocalDate date = dateBox.getValue();
+        Purchase purchase = new Purchase(cu,it,date);
         if (cu != null && it != null && dateBox.getValue() !=null){
-            LocalDate date = dateBox.getValue();
-            purchaseList.getItems().add(ps.addPurchase(cu,it,date));
+            if (ps.addPurchase(purchase)){
+                purchaseList.getItems().add(purchase);
+            }else{
+                alert.setContentText("could not added the purchases");
+                alert.showAndWait();
+            }
+
 
         }else{
             alert.setContentText("you need fill all fields");

@@ -25,7 +25,7 @@ public class PurchasesServices {
     public PurchasesServices() {
         dao = new DAOFactory();
     }
-    public Purchase updatePurchases(Purchase purchase){
+    public boolean updatePurchases(Purchase purchase){
         return dao.getDAOPurchases().update(purchase);
     }
     public List<Purchase> getAllPurchases() {
@@ -53,9 +53,8 @@ public class PurchasesServices {
 
      }
 
-    public Purchase addPurchase(Customer customer, Item item, LocalDate date) {
-        Purchase newPurchase = new Purchase(customer,item,date);
-        return dao.getDAOPurchases().save(newPurchase);
+    public boolean addPurchase(Purchase purchase) {
+        return dao.getDAOPurchases().save(purchase);
 
     }
 

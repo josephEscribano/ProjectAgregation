@@ -25,7 +25,7 @@ public class CustomersServices {
         dao = new DAOFactory();
     }
 
-    public Customer updateCustomers(Customer customer){
+    public boolean updateCustomers(Customer customer){
         return dao.getDAOCustomers().update(customer);
     }
     public List<Customer> getAllCustomers()  {
@@ -36,13 +36,13 @@ public class CustomersServices {
         return dao.getDAOCustomers().get(id);
     }
 
-    public void deleteCustomer(Customer customer) {
-        dao.getDAOCustomers().delete(customer);
+    public boolean deleteCustomer(Customer customer) {
+        return dao.getDAOCustomers().delete(customer);
     }
 
 
 
-    public Customer addCustomer(Customer customer)  {
+    public boolean addCustomer(Customer customer)  {
 
         return dao.getDAOCustomers().save(customer);
 

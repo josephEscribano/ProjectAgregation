@@ -56,7 +56,8 @@ public class JDBCDAOItems implements DAOItems {
     }
 
     @Override
-    public Item save(Item item) {
+    public boolean save(Item item) {
+        boolean confirmacion = false;
         try{
             connection = db.getConnection();
             preparedStatement = connection.prepareStatement(Querys.INSERT_ITEM_QUERY,Statement.RETURN_GENERATED_KEYS);
@@ -71,6 +72,7 @@ public class JDBCDAOItems implements DAOItems {
                 auto_id = resultSet.getInt(1);
 
             }
+            confirmacion = true;
 
             item.setIdItem(auto_id);
         } catch (SQLException throwables) {
@@ -81,12 +83,13 @@ public class JDBCDAOItems implements DAOItems {
             db.closeConnection(connection);
         }
 
-        return item;
+        return confirmacion;
 
     }
 
     @Override
-    public Item update(Item item) {
+    public boolean update(Item item) {
+        boolean confimacion = false;
         try{
             connection = db.getConnection();
             preparedStatement = connection.prepareStatement(Querys.UPDATE_ITEM_QUERY);
@@ -96,6 +99,7 @@ public class JDBCDAOItems implements DAOItems {
             preparedStatement.setInt(4,item.getIdItem());
 
             preparedStatement.executeUpdate();
+            confimacion = true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally {
@@ -103,11 +107,11 @@ public class JDBCDAOItems implements DAOItems {
             db.releaseResources(preparedStatement);
             db.closeConnection(connection);
         }
-        return item;
+        return confimacion;
     }
 
     @Override
-    public void delete(Item t) {
+    public void delete(Item item) {
 
     }
 

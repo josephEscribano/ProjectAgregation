@@ -9,13 +9,9 @@ q
 Asrc/main/java/fx/controllers/reviews/FXMLAddReviewController.java,b\a\baf81894340a509b2abc899e205e8084d037b845
 O
 src/main/java/model/Review.java,7\b\7bb951e4cc17946bec61d495a2a1b264f058b4e3
-x
-Hsrc/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java,0\9\09be0fb26da1382b052adf34756c13cd3a27a201
 R
 "src/main/java/dao/DBConection.java,7\3\7310350038574562a9ffd27b510b770ac9f618f5
 p
 @src/main/java/fx/controllers/purchases/FXMLDeleteController.java,9\5\959be05476b6b823bcb0119912890c9bd919e358
 o
 ?src/main/java/fx/controllers/items/FXMLListItemsController.java,c\7\c77465dd99446a6857a656f54c60279f5d005b18
-v
-Fsrc/main/java/fx/controllers/customers/FXMLListCustomerController.java,1\5\15488958c5d69bc2ee6e2df712660d0889bea658

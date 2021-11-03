@@ -65,7 +65,8 @@ public class JDBCDAOcustomers implements DAOCustomers {
     }
 
     @Override
-    public Customer save(Customer customer) {
+    public boolean save(Customer customer) {
+        boolean confirmacion = false;
         try{
             connection = db.getConnection();
             preparedStatement = connection.prepareStatement(Querys.INSERT_CUSTOMER_QUERY,Statement.RETURN_GENERATED_KEYS);
@@ -84,6 +85,7 @@ public class JDBCDAOcustomers implements DAOCustomers {
             }
 
             customer.setIdCustomer(auto_id);
+            confirmacion = true;
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -93,12 +95,13 @@ public class JDBCDAOcustomers implements DAOCustomers {
             db.closeConnection(connection);
         }
 
-        return customer;
+        return confirmacion;
 
     }
 
     @Override
-    public Customer update(Customer customer) {
+    public boolean update(Customer customer) {
+        boolean confirmacion = false;
         try{
             connection = db.getConnection();
             preparedStatement = connection.prepareStatement(Querys.UPDATE_CUSTOMER_QUERY);
@@ -107,7 +110,7 @@ public class JDBCDAOcustomers implements DAOCustomers {
             preparedStatement.setString(3, customer.getAddress());
             preparedStatement.setInt(4,customer.getIdCustomer());
             preparedStatement.executeUpdate();
-
+            confirmacion = true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally{
@@ -115,11 +118,21 @@ public class JDBCDAOcustomers implements DAOCustomers {
             db.releaseResources(preparedStatement);
             db.closeConnection(connection);
         }
-        return customer;
+        return confirmacion;
     }
 
     @Override
-    public void delete(Customer t) {
-
+    public boolean delete(Customer customer) {
+        boolean confirmacion = false;
+        try{
+            connection = db.getConnection();
+            preparedStatement = connection.prepareStatement(Querys.DELETE_PURCHASES_QUERY);
+            preparedStatement.setInt(1,customer.getIdCustomer());
+            preparedStatement.executeUpdate();
+            confirmacion = true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return confirmacion;
     }
 }
