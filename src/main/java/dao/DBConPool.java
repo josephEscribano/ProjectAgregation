@@ -37,6 +37,9 @@ public class DBConPool {
     public Connection getConnection() throws SQLException {
         return pool.getConnection();
     }
+    public BasicDataSource getDataSource(){
+        return pool;
+    }
 
     public void closePool()  {
         try {

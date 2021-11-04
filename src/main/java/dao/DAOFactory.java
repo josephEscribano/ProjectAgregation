@@ -3,6 +3,10 @@ package dao;
 import dao.jdbcDAO.JDBCDAOItems;
 import dao.jdbcDAO.JDBCDAOcustomers;
 import dao.jdbcDAO.JDBCDAOpurchases;
+import dao.springJDBC.SpringDAOCustomers;
+import dao.springJDBC.SpringDAOItems;
+import dao.springJDBC.SpringDAOPurchases;
+import dao.springJDBC.SpringDAOReviews;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -35,10 +39,13 @@ public class DAOFactory {
     public DAOItems getDAOItems(){
         String sourceItems;
         DAOItems dao = null;
-        sourceItems = daoProps.getProperty("daoItemsJDBC");
+        sourceItems = daoProps.getProperty("daoItemsSpring");
         if (sourceItems.equals("JDBCDAOItems")){
             dao = new JDBCDAOItems();
+        }else if (sourceItems.equals("SpringDAOItems")){
+            dao = new SpringDAOItems();
         }
+
 
         return dao;
     }
@@ -46,9 +53,11 @@ public class DAOFactory {
     public DAOCustomers getDAOCustomers(){
         String sourceCustomers;
         DAOCustomers dao = null;
-        sourceCustomers = daoProps.getProperty("daoCustomersJDBC");
+        sourceCustomers = daoProps.getProperty("daoCustomersSpring");
         if (sourceCustomers.equals("JDBCDAOcustomers")){
             dao = new JDBCDAOcustomers();
+        }else if (sourceCustomers.equals("SpringDAOCustomers")){
+            dao = new SpringDAOCustomers();
         }
 
         return dao;
@@ -58,9 +67,22 @@ public class DAOFactory {
     public DAOPurchases getDAOPurchases(){
         String sourcesPurchses;
         DAOPurchases dao = null;
-        sourcesPurchses = daoProps.getProperty("daoCustomersJDBC");
+        sourcesPurchses = daoProps.getProperty("daoPurchasesSpring");
         if (sourcesPurchses.equals("JDBCDAOcustomers")){
             dao = new JDBCDAOpurchases();
+        }else if (sourcesPurchses.equals("SpringDAOPurchases")){
+            dao = new SpringDAOPurchases();
+        }
+
+        return dao;
+    }
+
+    public DAOReviews getDAOReviews(){
+        String sourcesPurchses;
+        DAOReviews dao = null;
+        sourcesPurchses = daoProps.getProperty("daoReviewsSpring");
+        if (sourcesPurchses.equals("SpringDAOReviews")){
+            dao = new SpringDAOReviews();
         }
 
         return dao;

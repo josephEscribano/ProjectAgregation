@@ -1,14 +1,21 @@
 package dao.springJDBC;
 
 import dao.DAOPurchases;
+import dao.DBConPool;
+import dao.springJDBC.mappers.ItemRowMapper;
+import dao.springJDBC.mappers.PurchasesMapper;
 import model.Purchase;
+import org.springframework.jdbc.core.JdbcTemplate;
+import utils.Querys;
 
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
 public class SpringDAOPurchases implements DAOPurchases {
     @Override
     public Purchase get(int id) {
+
         return null;
     }
 
@@ -24,7 +31,8 @@ public class SpringDAOPurchases implements DAOPurchases {
 
     @Override
     public List<Purchase> getAll() {
-        return null;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        return jdbcTemplate.query(Querys.SELECT_PURCHASES_QUERY, new PurchasesMapper());
     }
 
     @Override
@@ -49,6 +57,9 @@ public class SpringDAOPurchases implements DAOPurchases {
 
     @Override
     public List<Purchase> findPurchaseByDate(Date date) {
-        return null;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
+        //si no devuelve nada da un error
+        return jdbcTemplate.query(Querys.SELECT_PURCHASE_BY_DATE_QUERY, new Object[]{new java.sql.Date(date.getTime())},new PurchasesMapper());
+
     }
 }

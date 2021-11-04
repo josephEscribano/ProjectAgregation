@@ -8,9 +8,8 @@ public class DBConection {
 
 
     public Connection getConnection() throws SQLException {
-        Connection connection = DBConPool.getInstance().getConnection();
 
-        return connection;
+        return DBConPool.getInstance().getConnection();
     }
 
     public void closeConnection(Connection connection){

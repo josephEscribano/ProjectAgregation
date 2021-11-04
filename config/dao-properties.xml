@@ -4,4 +4,8 @@
     <entry key="daoItemsJDBC">JDBCDAOItems</entry>
     <entry key="daoCustomersJDBC">JDBCDAOcustomers</entry>
     <entry key="daoPurchasesJDBC">JDBCDAOpurchases.java</entry>
+    <entry key="daoCustomersSpring">SpringDAOCustomers</entry>
+    <entry key="daoItemsSpring">SpringDAOItems</entry>
+    <entry key="daoPurchasesSpring">SpringDAOPurchases</entry>
+    <entry key="daoReviewsSpring">SpringDAOReviews</entry>
 </properties>

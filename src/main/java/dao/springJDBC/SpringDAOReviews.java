@@ -2,6 +2,7 @@ package dao.springJDBC;
 
 import dao.DAOReviews;
 import model.Review;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
@@ -13,6 +14,8 @@ public class SpringDAOReviews implements DAOReviews {
 
     @Override
     public List<Review> getAll() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+
         return null;
     }
 
