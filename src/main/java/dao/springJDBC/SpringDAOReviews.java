@@ -1,8 +1,11 @@
 package dao.springJDBC;
 
 import dao.DAOReviews;
+import dao.DBConPool;
+import dao.springJDBC.mappers.ReviewsMapper;
 import model.Review;
 import org.springframework.jdbc.core.JdbcTemplate;
+import utils.Querys;
 
 import java.util.List;
 
@@ -14,9 +17,10 @@ public class SpringDAOReviews implements DAOReviews {
 
     @Override
     public List<Review> getAll() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(DBConPool.getInstance().getDataSource());
 
-        return null;
+
+        return jdbcTemplate.query(Querys.SELECT_REVIEW_QUERY,new ReviewsMapper());
     }
 
     @Override
@@ -33,4 +37,6 @@ public class SpringDAOReviews implements DAOReviews {
     public void delete(Review t) {
 
     }
+
+
 }

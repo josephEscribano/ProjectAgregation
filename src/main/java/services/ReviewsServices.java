@@ -6,6 +6,9 @@
 package services;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import dao.DAOFactory;
 import model.Customer;
 import model.Review;
 
@@ -16,10 +19,15 @@ import model.Review;
 public class ReviewsServices {
 
 
+    private DAOFactory dao;
 
-    public ArrayList<Review> getAllReviews() {
-        ArrayList<Review> rev =  null;
-        return rev;
+    public ReviewsServices(DAOFactory dao) {
+        this.dao = dao;
+    }
+
+    public List<Review> getAllReviews() {
+
+        return dao.getDAOReviews().getAll();
     }
 
     public void deleteReview(Customer customer, Review review) {

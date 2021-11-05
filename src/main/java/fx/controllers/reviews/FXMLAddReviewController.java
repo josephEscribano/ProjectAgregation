@@ -30,26 +30,28 @@ import services.ReviewsServices;
 public class FXMLAddReviewController implements Initializable {
 
     @FXML
-    private ListView clientBox;
+    private ListView<Customer> clientBox;
     @FXML
-    private ListView purchaseBox;
+    private ListView<Purchase> purchaseBox;
     @FXML
-    private ComboBox ratingBox;
+    private ComboBox<Integer> ratingBox;
     @FXML
     private TextField titleBox;
     @FXML
     private TextArea textBox;
     @FXML
-    private ListView reviewList;
+    private ListView<Review> reviewList;
 
     public void loadCustomers() {
+
     }
 
      public void loadPurchases() {
+
      }
 
     public void addReview() {
-            }
+    }
 
     /**
      * Initializes the controller class.

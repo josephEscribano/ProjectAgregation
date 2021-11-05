@@ -33,6 +33,15 @@ public class Review {
 
     }
 
+    public Review(int idReview, int rating, String title, String description, LocalDate date, Purchase purchase) {
+        this.idReview = idReview;
+        this.rating = rating;
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.purchase = purchase;
+    }
+
     public int getIdReview() {
         return idReview;
     }

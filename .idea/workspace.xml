@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="commit inicial, Spring">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/CustomerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/ItemRowMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/PurchasesMapper.java" afterDir="false" />
+    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="falta las reviews">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/ReviewsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dao-properties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/dao-properties.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DBConPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DBConPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DBConection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DBConection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Querys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Querys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Review.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +162,10 @@
       <workItem from="1635845493867" duration="2298000" />
       <workItem from="1635853415631" duration="5517000" />
       <workItem from="1636045068420" duration="8922000" />
+      <workItem from="1636054409582" duration="91000" />
+      <workItem from="1636116668898" duration="262000" />
+      <workItem from="1636117120349" duration="3575000" />
+      <workItem from="1636120761006" duration="539000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: Skeleton">
       <created>1632244318324</created>
@@ -257,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636045532191</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="falta las reviews">
+      <created>1636054425448</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636054425448</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +308,8 @@
     <MESSAGE value="errores arreglados" />
     <MESSAGE value="commit antes de borrar las clases" />
     <MESSAGE value="commit inicial, Spring" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit inicial, Spring" />
+    <MESSAGE value="falta las reviews" />
+    <option name="LAST_COMMIT_MESSAGE" value="falta las reviews" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
