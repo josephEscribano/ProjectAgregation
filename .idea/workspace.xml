@@ -4,332 +4,168 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="falta las reviews">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/ReviewsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Querys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Querys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Review.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" afterDir="false" />
+    <list default="true" id="6dff05cd-076f-476b-86d1-adb4d0c3ab6b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dao-properties.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/store-properties.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/users.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/customer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/items.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/purchases.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/ConfigProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/ConfigYaml.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/JDBCproperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOCustomers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOPurchases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOReviews.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DBConPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DBConection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOcustomers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/jdbcDAO/JDBCDAOpurchases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOCustomers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOPurchases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/SpringDAOReviews.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/CustomerMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/ItemRowMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/PurchasesMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/springJDBC/mappers/ReviewsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLLoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLPrincipalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/FXMLWelcomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLAddCustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLListCustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLUpdateCustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLfindCustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLAddItemsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLDeleteItemController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLFindItemController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLListItemsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/items/FXMLUpdateItemController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLAddPurchasesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDatePurchasesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLUpdatePurchasesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLAddReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLdeleteReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fx/controllers/reviews/FXMLfindReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/MainFX.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Purchase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Review.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CustomersServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ItemsServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/PurchasesServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ReviewsServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Constantes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Querys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLLogin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLPrincipal.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLWelcome.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLAddCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLListCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLUpdateCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLdeleteCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/customers/FXMLfindCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLAddItems.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLDeleteItem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLFindItem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLListItems.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/items/FXMLUpdateItems.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLAddPurchases.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLDatePurchases.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLDelete.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/purchases/FXMLUpdatePurchases.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLAddReview.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLdeleteReview.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/reviews/FXMLfindReview.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configuration/ConfigProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configuration/ConfigYaml.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLLoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLPrincipalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/FXMLWelcomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLAddCustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLdeleteCustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/customers/FXMLfindCustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/items/FXMLListItemsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDatePurchasesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/purchases/FXMLDeleteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLAddReviewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLdeleteReviewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fx/controllers/reviews/FXMLfindReviewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FXMLLogin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FXMLPrincipal.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FXMLWelcome.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/customers/FXMLAddCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/customers/FXMLdeleteCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/customers/FXMLfindCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/items/FXMLListItems.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/purchases/FXMLDatePurchases.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/purchases/FXMLDelete.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/reviews/FXMLAddReview.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/reviews/FXMLdeleteReview.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/reviews/FXMLfindReview.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/MainFX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Purchase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Review.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/CustomersServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/ItemsServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/PurchasesServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/ReviewsServices.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Tag Library Descriptor" />
-        <option value="FxmlFile" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1yGtDO2SvU2FYWp9sLxfW95nmLj" />
+  <component name="ProjectId" id="20d4I6kHk5Brf97piktGf26yGsS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ejemplo2JDBCLucia" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Proyect\ProyectosAD\jdbcWebstore\data" />
-      <recent name="E:\Proyect\ProyectosAD\WebstoreAD" />
-      <recent name="F:\IES Quevedo 21-22\Acceso a datos 21-22\AD-Workspace21-22\WebStore18-19-XML\src\main\resources\fxml\items" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Proyect\ProyectosAD\jdbcWebstore\propertiesFiles" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="dao" />
-      <recent name="fx.controllers.items" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.MainFX">
-    <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="main.MainFX" />
-      <module name="PrimerJavaFX" />
-      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainJDCB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.MainJDCB" />
-      <module name="PrimerJavaFX" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.MainFX" />
-      <item itemvalue="Application.MainJDCB" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.MainFX" />
-        <item itemvalue="Application.MainJDCB" />
-      </list>
-    </recent_temporary>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringJDBCWebstoreAD" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\Joseph\AppData\Roaming\Subversion</configuration>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b888da37-3423-4cbd-be8d-84d8f7da6f67" name="Changes" comment="" />
-      <created>1631889634022</created>
+      <changelist id="6dff05cd-076f-476b-86d1-adb4d0c3ab6b" name="Changes" comment="" />
+      <created>1636361050759</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1631889634022</updated>
-      <workItem from="1631889635492" duration="33000" />
-      <workItem from="1631890695033" duration="627000" />
-      <workItem from="1631891819360" duration="107000" />
-      <workItem from="1631892012955" duration="81000" />
-      <workItem from="1631892180073" duration="1164000" />
-      <workItem from="1631977140815" duration="7396000" />
-      <workItem from="1632124933070" duration="772000" />
-      <workItem from="1632161604146" duration="1334000" />
-      <workItem from="1632236898497" duration="165000" />
-      <workItem from="1632238783775" duration="3452000" />
-      <workItem from="1632243724119" duration="3108000" />
-      <workItem from="1632247096574" duration="67000" />
-      <workItem from="1632936654294" duration="8015000" />
-      <workItem from="1633273829175" duration="8948000" />
-      <workItem from="1633368216504" duration="2802000" />
-      <workItem from="1633371068372" duration="3157000" />
-      <workItem from="1633443911836" duration="24855000" />
-      <workItem from="1633537090787" duration="6312000" />
-      <workItem from="1633623552275" duration="3854000" />
-      <workItem from="1633768340423" duration="618000" />
-      <workItem from="1634137291276" duration="12820000" />
-      <workItem from="1634154388430" duration="163000" />
-      <workItem from="1634228022021" duration="11690000" />
-      <workItem from="1634572541643" duration="6269000" />
-      <workItem from="1634819461164" duration="149000" />
-      <workItem from="1635087523909" duration="15357000" />
-      <workItem from="1635150243210" duration="3753000" />
-      <workItem from="1635167795368" duration="2497000" />
-      <workItem from="1635172071155" duration="645000" />
-      <workItem from="1635172816178" duration="617000" />
-      <workItem from="1635244806651" duration="815000" />
-      <workItem from="1635246013055" duration="4022000" />
-      <workItem from="1635331885967" duration="4886000" />
-      <workItem from="1635795541313" duration="5189000" />
-      <workItem from="1635845493867" duration="2298000" />
-      <workItem from="1635853415631" duration="5517000" />
-      <workItem from="1636045068420" duration="8922000" />
-      <workItem from="1636054409582" duration="91000" />
-      <workItem from="1636116668898" duration="262000" />
-      <workItem from="1636117120349" duration="3575000" />
-      <workItem from="1636120761006" duration="539000" />
+      <updated>1636361050759</updated>
+      <workItem from="1636361052995" duration="162000" />
     </task>
-    <task id="LOCAL-00001" summary="Initial commit: Skeleton">
-      <created>1632244318324</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1632244318324</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Initial commit: Skeleton">
-      <created>1632246790566</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1632246790566</updated>
-    </task>
-    <task id="LOCAL-00003" summary="lectura hecha y escritura a medias">
-      <created>1632946432493</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1632946432493</updated>
-    </task>
-    <task id="LOCAL-00004" summary="lectura hecha y escritura, falta filtrar los ids y que añada a la lista de la ventana add">
-      <created>1632947127252</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1632947127252</updated>
-    </task>
-    <task id="LOCAL-00005" summary="terminado añadir items, borrar items,escribir y leer del fichero">
-      <created>1633285259311</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1633285259311</updated>
-    </task>
-    <task id="LOCAL-00006" summary="arreglos varios">
-      <created>1633373310310</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1633373310310</updated>
-    </task>
-    <task id="LOCAL-00007" summary="error con el delete">
-      <created>1633471278573</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1633471278573</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Todas las funcionalidades correctas">
-      <created>1633543014727</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1633543014727</updated>
-    </task>
-    <task id="LOCAL-00009" summary="funcionalidad customer añadir,buscar por id y lista customers hecha">
-      <created>1634154443065</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1634154443065</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Primera conexion a la base de datos">
-      <created>1634578542967</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1634578542967</updated>
-    </task>
-    <task id="LOCAL-00011" summary="errores arreglados">
-      <created>1635093764375</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1635093764375</updated>
-    </task>
-    <task id="LOCAL-00012" summary="commit antes de borrar las clases">
-      <created>1635249120580</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1635249120580</updated>
-    </task>
-    <task id="LOCAL-00013" summary="commit inicial, Spring">
-      <created>1636045532191</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1636045532191</updated>
-    </task>
-    <task id="LOCAL-00014" summary="falta las reviews">
-      <created>1636054425448</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1636054425448</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="false" />
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <ignored-roots>
-      <path value="$USER_HOME$/git" />
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-    <MESSAGE value="Initial commit: Skeleton" />
-    <MESSAGE value="lectura hecha y escritura a medias" />
-    <MESSAGE value="lectura hecha y escritura, falta filtrar los ids y que añada a la lista de la ventana add" />
-    <MESSAGE value="terminado añadir items, borrar items,escribir y leer del fichero" />
-    <MESSAGE value="arreglos varios" />
-    <MESSAGE value="error con el delete" />
-    <MESSAGE value="Todas las funcionalidades correctas" />
-    <MESSAGE value="funcionalidad customer añadir,buscar por id y lista customers hecha" />
-    <MESSAGE value="Primera conexion a la base de datos" />
-    <MESSAGE value="errores arreglados" />
-    <MESSAGE value="commit antes de borrar las clases" />
-    <MESSAGE value="commit inicial, Spring" />
-    <MESSAGE value="falta las reviews" />
-    <option name="LAST_COMMIT_MESSAGE" value="falta las reviews" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/customers/FXMLdeleteCustomerController.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fx/controllers/purchases/FXMLDeleteController.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/main/MainFX.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
