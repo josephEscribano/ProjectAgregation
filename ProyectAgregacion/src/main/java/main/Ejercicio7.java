@@ -1,3 +1,5 @@
+package main;
+
 public class Ejercicio7 {
 
 //    [{$group: {
@@ -9,6 +11,6 @@ public class Ejercicio7 {
 //        totalEvent: -1
 //    }}, {$limit: 1}]
     public static void main(String[] args) {
-        
+
     }
 }
