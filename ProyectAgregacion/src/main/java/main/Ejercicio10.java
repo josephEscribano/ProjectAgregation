@@ -5,6 +5,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.UnwindOptions;
 import main.Constantes.Constantes;
 import org.bson.Document;
 
@@ -19,29 +20,30 @@ import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Projections.*;
 import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
+public class Ejercicio10 {
 
-public class Ejercicio6 {
-
-//    [{$match: {
-//        'event-location': {
-//            $regex: 'Latina'
-//        }
+//[{$unwind: {
+//        path: '$purchases',
+//                preserveNullAndEmptyArrays: false
+//    }}, {$unwind: {
+//        path: '$purchases.review'
 //    }}, {$group: {
-//        _id: '$event-location',
-//                totalEvent: {
+//        _id: '$name',
+//                Nreviews: {
 //            $sum: 1
 //        }
 //    }}]
-
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
 
         MongoDatabase db = mongo.getDatabase(Constantes.DATABASE);
-        MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION);
+        MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION_CUSTOMER);
 
+        UnwindOptions unwindOptions = new UnwindOptions();
         col.aggregate(List.of(
-                match(regex("event-location","Latina")),
-                group("$event-location", sum("totalEvent", 1))
+                unwind("$purchases",unwindOptions.preserveNullAndEmptyArrays(false)),
+                unwind("$purchases.review"),
+                group("$name",sum("Nreviews",1))
         )).into(new ArrayList<>()).forEach(System.out::println);
     }
 }

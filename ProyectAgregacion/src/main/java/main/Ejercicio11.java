@@ -1,6 +1,4 @@
 package main;
-
-
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -19,29 +17,34 @@ import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Projections.*;
 import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
+public class Ejercicio11 {
 
-public class Ejercicio6 {
 
-//    [{$match: {
-//        'event-location': {
-//            $regex: 'Latina'
-//        }
+//    [{$unwind: {
+//        path: '$purchases'
 //    }}, {$group: {
-//        _id: '$event-location',
-//                totalEvent: {
+//        _id: '$_id',
+//                Npurchases: {
 //            $sum: 1
 //        }
+//    }}, {$sort: {
+//        Nourchases: -1
+//    }}, {$limit: 1}, {$project: {
+//        _id: 1
 //    }}]
-
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
 
         MongoDatabase db = mongo.getDatabase(Constantes.DATABASE);
-        MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION);
+        MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION_CUSTOMER);
 
         col.aggregate(List.of(
-                match(regex("event-location","Latina")),
-                group("$event-location", sum("totalEvent", 1))
+                unwind("$purchases"),
+                group("$_id",sum("Npurchases",1)),
+                sort(descending("Npurchases")),
+                limit(1),
+                project(include("_id"))
         )).into(new ArrayList<>()).forEach(System.out::println);
+
     }
 }

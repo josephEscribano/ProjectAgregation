@@ -1,6 +1,5 @@
 package main;
 
-
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -20,17 +19,20 @@ import static com.mongodb.client.model.Projections.*;
 import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
 
-public class Ejercicio6 {
+public class Ejercicio8 {
 
-//    [{$match: {
-//        'event-location': {
-//            $regex: 'Latina'
-//        }
-//    }}, {$group: {
+//    [{$group: {
 //        _id: '$event-location',
 //                totalEvent: {
 //            $sum: 1
 //        }
+//    }}, {$group: {
+//        _id: 'result',
+//                media: {
+//            $avg: '$totalEvent'
+//        }
+//    }}, {$project: {
+//        _id: 0
 //    }}]
 
     public static void main(String[] args) {
@@ -40,8 +42,9 @@ public class Ejercicio6 {
         MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION);
 
         col.aggregate(List.of(
-                match(regex("event-location","Latina")),
-                group("$event-location", sum("totalEvent", 1))
-        )).into(new ArrayList<>()).forEach(System.out::println);
+                group("$event-location",sum("totalEvent",1)),
+                group("result",avg("media","$totalEvent")),
+                project(exclude("_id"))
+        )).into(new ArrayList<>()).stream().forEach(System.out::println);
     }
 }
