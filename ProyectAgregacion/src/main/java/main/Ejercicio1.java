@@ -8,25 +8,26 @@ import main.Constantes.Constantes;
 import org.bson.Document;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import static com.mongodb.client.model.Aggregates.*;
-import static com.mongodb.client.model.Filters.*;
+
+import static com.mongodb.client.model.Aggregates.match;
+import static com.mongodb.client.model.Aggregates.project;
+import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Projections.*;
 
 public class Ejercicio1 {
 
-//    [{
-//        $match: {
-//            'event-location': 'Auditorio y sala de exposiciones Paco de Lucía (Latina)'
-//        }
-//    }, {
-//        $project: {
-//            _id: 0,
-//                    title: 1,
-//                    '@type': 1
-//        }
-//    }]
+    //    [{
+    //        $match: {
+    //            'event-location': 'Auditorio y sala de exposiciones Paco de Lucía (Latina)'
+    //        }
+    //    }, {
+    //        $project: {
+    //            _id: 0,
+    //                    title: 1,
+    //                    '@type': 1
+    //        }
+    //    }]
 
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
@@ -35,8 +36,8 @@ public class Ejercicio1 {
         MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION);
 
         col.aggregate(List.of(
-                match(eq("event-location","Auditorio y sala de exposiciones Paco de Lucía (Latina)")),
-                project(fields(include("title","@type"),
+                match(eq("event-location", "Auditorio y sala de exposiciones Paco de Lucía (Latina)")),
+                project(fields(include("title", "@type"),
                         exclude("_id")))
         )).into(new ArrayList<>()).forEach(System.out::println);
     }

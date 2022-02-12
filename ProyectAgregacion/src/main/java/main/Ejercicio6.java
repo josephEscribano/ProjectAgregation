@@ -11,27 +11,23 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mongodb.client.model.Accumulators.*;
-import static com.mongodb.client.model.Aggregates.*;
-import static java.util.Arrays.asList;
-import static com.mongodb.client.model.Sorts.*;
-import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Projections.*;
-import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Accumulators.sum;
+import static com.mongodb.client.model.Aggregates.group;
+import static com.mongodb.client.model.Aggregates.match;
+import static com.mongodb.client.model.Filters.regex;
 
 public class Ejercicio6 {
 
-//    [{$match: {
-//        'event-location': {
-//            $regex: 'Latina'
-//        }
-//    }}, {$group: {
-//        _id: '$event-location',
-//                totalEvent: {
-//            $sum: 1
-//        }
-//    }}]
+    //    [{$match: {
+    //        'event-location': {
+    //            $regex: 'Latina'
+    //        }
+    //    }}, {$group: {
+    //        _id: '$event-location',
+    //                totalEvent: {
+    //            $sum: 1
+    //        }
+    //    }}]
 
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
@@ -40,7 +36,7 @@ public class Ejercicio6 {
         MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION);
 
         col.aggregate(List.of(
-                match(regex("event-location","Latina")),
+                match(regex("event-location", "Latina")),
                 group("$event-location", sum("totalEvent", 1))
         )).into(new ArrayList<>()).forEach(System.out::println);
     }

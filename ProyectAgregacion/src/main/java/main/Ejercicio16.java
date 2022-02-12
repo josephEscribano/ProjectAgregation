@@ -9,14 +9,14 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.List;
-import static com.mongodb.client.model.Accumulators.*;
+
+import static com.mongodb.client.model.Accumulators.avg;
+import static com.mongodb.client.model.Accumulators.sum;
 import static com.mongodb.client.model.Aggregates.*;
-import static java.util.Arrays.asList;
-import static com.mongodb.client.model.Sorts.*;
 import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Projections.*;
-import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Sorts.descending;
+
 public class Ejercicio16 {
 
     //QUERY 1 - The console that has released the most games
@@ -113,14 +113,15 @@ public class Ejercicio16 {
 
     //QUERY 5 : the genre with the highest average sales
     //Result: Document{{_id=Educational,Sports, media=9.6}}
-//    [{$group: {
-//        _id: '$Metadata.Genres',
-//                media: {
-//            $avg: '$Metrics.Sales'
-//        }
-//    }}, {$sort: {
-//        media: -1
-//    }}, {$limit: 1}]
+
+    //    [{$group: {
+    //        _id: '$Metadata.Genres',
+    //                media: {
+    //            $avg: '$Metrics.Sales'
+    //        }
+    //    }}, {$sort: {
+    //        media: -1
+    //    }}, {$limit: 1}]
 
 
     //QUERY 5 : Average score for EA games by console
@@ -131,16 +132,16 @@ public class Ejercicio16 {
     //Document{{_id=Nintendo DS, media=60.041666666666664}}
     //Document{{_id=Nintendo Wii, media=66.81818181818181}}
 
-//    [{$match: {
-//        'Metadata.Publishers': {
-//            $eq: 'EA'
-//        }
-//    }}, {$group: {
-//        _id: '$Release.Console',
-//                media: {
-//            $avg: '$Metrics.Review Score'
-//        }
-//    }}]
+        //    [{$match: {
+    //        'Metadata.Publishers': {
+    //            $eq: 'EA'
+    //        }
+    //    }}, {$group: {
+    //        _id: '$Release.Console',
+    //                media: {
+    //            $avg: '$Metrics.Review Score'
+    //        }
+    //    }}]
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
 
@@ -149,41 +150,41 @@ public class Ejercicio16 {
 
         System.out.println("************************QUERY 1 *********************************");
         col.aggregate(List.of(
-                group("$Release.Console",sum("NgamesConsole",1)),
+                group("$Release.Console", sum("NgamesConsole", 1)),
                 sort(descending("NgamesConsole")),
                 limit(1)
         )).into(new ArrayList<>()).forEach(System.out::println);
 
         System.out.println("************************QUERY 2 *********************************");
         col.aggregate(List.of(
-                match(gt("Metrics.Review Score",70)),
-                group("$Metadata.Genres",avg("mediaPrice","$Metrics.Used Price")),
+                match(gt("Metrics.Review Score", 70)),
+                group("$Metadata.Genres", avg("mediaPrice", "$Metrics.Used Price")),
                 sort(descending("mediaPrice"))
         )).into(new ArrayList<>()).forEach(System.out::println);
 
         System.out.println("************************QUERY 3 *********************************");
 
         col.aggregate(List.of(
-                match(and(eq("Metadata.Publishers","Ubisoft")
-                        ,gt("Features.Max Players",1)
-                        ,eq("Release.Year","2008"))),
-                sort(descending("Metrics.Review Score")),
-                project(fields(exclude("_id")
-                        ,include("Title")))
+                        match(and(eq("Metadata.Publishers", "Ubisoft")
+                                , gt("Features.Max Players", 1)
+                                , eq("Release.Year", "2008"))),
+                        sort(descending("Metrics.Review Score")),
+                        project(fields(exclude("_id")
+                                , include("Title")))
                 )
         ).into(new ArrayList<>()).forEach(System.out::println);
 
         System.out.println("************************QUERY 4 *********************************");
         col.aggregate(List.of(
-                group("$Metadata.Genres",avg("media","$Metrics.Sales")),
+                group("$Metadata.Genres", avg("media", "$Metrics.Sales")),
                 sort(descending("media")),
                 limit(1)
         )).into(new ArrayList<>()).forEach(System.out::println);
 
         System.out.println("************************QUERY 5 *********************************");
         col.aggregate(List.of(
-                match(eq("Metadata.Publishers","EA")),
-                group("$Release.Console",avg("media","$Metrics.Review Score"))
+                match(eq("Metadata.Publishers", "EA")),
+                group("$Release.Console", avg("media", "$Metrics.Review Score"))
         )).into(new ArrayList<>()).forEach(System.out::println);
     }
 }

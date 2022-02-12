@@ -11,30 +11,25 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mongodb.client.model.Accumulators.*;
+import static com.mongodb.client.model.Accumulators.avg;
 import static com.mongodb.client.model.Aggregates.*;
-import static java.util.Arrays.asList;
-import static com.mongodb.client.model.Sorts.*;
-import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Projections.*;
-import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.gt;
 
 public class Ejercicio12 {
 
-//    [{$unwind: {
-//        path: '$reviews',
-//                preserveNullAndEmptyArrays: false
-//    }}, {$group: {
-//        _id: '$_id',
-//                media: {
-//            $avg: '$reviews.raiting'
-//        }
-//    }}, {$match: {
-//        media: {
-//            $gt: 4
-//        }
-//    }}, {$count: 'Numero de items'}]
+    //    [{$unwind: {
+    //        path: '$reviews',
+    //                preserveNullAndEmptyArrays: false
+    //    }}, {$group: {
+    //        _id: '$_id',
+    //                media: {
+    //            $avg: '$reviews.raiting'
+    //        }
+    //    }}, {$match: {
+    //        media: {
+    //            $gt: 4
+    //        }
+    //    }}, {$count: 'Numero de items'}]
 
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
@@ -44,8 +39,8 @@ public class Ejercicio12 {
 
         col.aggregate(List.of(
                 unwind("$reviews", new UnwindOptions().preserveNullAndEmptyArrays(false)),
-                group("$_id",avg("media","$reviews.raiting")),
-                match(gt("media",4)),
+                group("$_id", avg("media", "$reviews.raiting")),
+                match(gt("media", 4)),
                 count()
         )).into(new ArrayList<>()).forEach(System.out::println);
     }

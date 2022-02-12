@@ -9,22 +9,24 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.List;
-import static com.mongodb.client.model.Aggregates.*;
-import static com.mongodb.client.model.Filters.*;
+
+import static com.mongodb.client.model.Aggregates.match;
+import static com.mongodb.client.model.Aggregates.project;
+import static com.mongodb.client.model.Filters.regex;
 import static com.mongodb.client.model.Projections.*;
 
 public class Ejercicio2 {
-//
-//[{$match: {
-//        'event-location': {
-//            $regex: 'Latina'
-//        }
-//    }}, {$project: {
-//        _id: 0,
-//                title: 1,
-//                '@type': 1,
-//                'event-location': 1
-//    }}]
+    //
+    //[{$match: {
+    //        'event-location': {
+    //            $regex: 'Latina'
+    //        }
+    //    }}, {$project: {
+    //        _id: 0,
+    //                title: 1,
+    //                '@type': 1,
+    //                'event-location': 1
+    //    }}]
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
 
@@ -32,10 +34,10 @@ public class Ejercicio2 {
         MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION);
 
         col.aggregate(List.of(
-                match(regex("event-location","Latina")),
-                        project(fields(
-                                include("title","@type","event-location"),
-                                exclude("_id"))))
+                match(regex("event-location", "Latina")),
+                project(fields(
+                        include("title", "@type", "event-location"),
+                        exclude("_id"))))
         ).into(new ArrayList<>()).forEach(System.out::println);
     }
 }

@@ -12,27 +12,23 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mongodb.client.model.Accumulators.*;
-import static com.mongodb.client.model.Aggregates.*;
-import static java.util.Arrays.asList;
-import static com.mongodb.client.model.Sorts.*;
-import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Projections.*;
-import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Accumulators.sum;
+import static com.mongodb.client.model.Aggregates.group;
+import static com.mongodb.client.model.Aggregates.unwind;
+
 public class Ejercicio10 {
 
-//[{$unwind: {
-//        path: '$purchases',
-//                preserveNullAndEmptyArrays: false
-//    }}, {$unwind: {
-//        path: '$purchases.review'
-//    }}, {$group: {
-//        _id: '$name',
-//                Nreviews: {
-//            $sum: 1
-//        }
-//    }}]
+    //[{$unwind: {
+    //        path: '$purchases',
+    //                preserveNullAndEmptyArrays: false
+    //    }}, {$unwind: {
+    //        path: '$purchases.review'
+    //    }}, {$group: {
+    //        _id: '$name',
+    //                Nreviews: {
+    //            $sum: 1
+    //        }
+    //    }}]
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
 
@@ -41,9 +37,9 @@ public class Ejercicio10 {
 
         UnwindOptions unwindOptions = new UnwindOptions();
         col.aggregate(List.of(
-                unwind("$purchases",unwindOptions.preserveNullAndEmptyArrays(false)),
+                unwind("$purchases", unwindOptions.preserveNullAndEmptyArrays(false)),
                 unwind("$purchases.review"),
-                group("$name",sum("Nreviews",1))
+                group("$name", sum("Nreviews", 1))
         )).into(new ArrayList<>()).forEach(System.out::println);
     }
 }

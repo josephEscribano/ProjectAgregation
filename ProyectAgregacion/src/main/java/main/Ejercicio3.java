@@ -10,33 +10,29 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static com.mongodb.client.model.Aggregates.*;
-import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Projections.*;
-
 public class Ejercicio3 {
 
 
-//[{
-//        $project: {
-//            _id: 0,
-//                    title: 1,
-//                    month: {
-//                $month: {
-//                    $toDate: '$dtstart'
-//                }
-//            }
-//        }
-//    }, {
-//        $match: {
-//            $expr: {
-//                $eq: [
-//                '$month',
-//                        1
-//            ]
-//            }
-//        }
-//    }]
+    //[{
+    //        $project: {
+    //            _id: 0,
+    //                    title: 1,
+    //                    month: {
+    //                $month: {
+    //                    $toDate: '$dtstart'
+    //                }
+    //            }
+    //        }
+    //    }, {
+    //        $match: {
+    //            $expr: {
+    //                $eq: [
+    //                '$month',
+    //                        1
+    //            ]
+    //            }
+    //        }
+    //    }]
 
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
@@ -45,14 +41,14 @@ public class Ejercicio3 {
         MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION);
 
         col.aggregate(Arrays.asList(new Document("$project",
-                        new Document("_id", 0L)
-                                .append("title", 1L)
-                                .append("month",
-                                        new Document("$month",
-                                                new Document("$toDate", "$dtstart")))),
-                new Document("$match",
-                        new Document("$expr",
-                                new Document("$eq", Arrays.asList("$month", 1L))))))
+                                new Document("_id", 0L)
+                                        .append("title", 1L)
+                                        .append("month",
+                                                new Document("$month",
+                                                        new Document("$toDate", "$dtstart")))),
+                        new Document("$match",
+                                new Document("$expr",
+                                        new Document("$eq", Arrays.asList("$month", 1L))))))
                 .into(new ArrayList<>())
                 .forEach(System.out::println);
     }

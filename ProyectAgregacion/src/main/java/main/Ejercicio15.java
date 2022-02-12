@@ -1,5 +1,6 @@
 package main;
 
+
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -11,23 +12,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.mongodb.client.model.Accumulators.sum;
-import static com.mongodb.client.model.Aggregates.group;
-import static com.mongodb.client.model.Aggregates.unwind;
+import static com.mongodb.client.model.Aggregates.*;
 
-public class Ejercicio9 {
+public class Ejercicio15 {
 
-    //[{
-    //        $unwind: {
-    //            path: '$purchases'
-    //        }
-    //    }, {
-    //        $group: {
-    //            _id: '$name',
-    //                    Ncompracas: {
-    //                $sum: 1
-    //            }
-    //        }
-    //    }]
+    //    [{$unwind: {
+//        path: '$purchases'
+//    }}, {$lookup: {
+//        from: 'Items',
+//                localField: 'purchases.id_purchase',
+//                foreignField: 'purchases.id_purchase',
+//                as: 'gastos'
+//    }}, {$unwind: {
+//        path: '$gastos'
+//    }}, {$group: {
+//        _id: '$name',
+//                sumPrice: {
+//            $sum: '$gastos.price'
+//        }
+//    }}]
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
 
@@ -36,7 +39,9 @@ public class Ejercicio9 {
 
         col.aggregate(List.of(
                 unwind("$purchases"),
-                group("$name", sum("Ncompras", 1))
+                lookup("Items", "purchases.id_purchase", "purchases.id_purchase", "gastos"),
+                unwind("$gastos"),
+                group("$name", sum("sumPrice", "$gastos.price"))
         )).into(new ArrayList<>()).forEach(System.out::println);
     }
 }

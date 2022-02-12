@@ -8,25 +8,19 @@ import main.Constantes.Constantes;
 import org.bson.Document;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static com.mongodb.client.model.Accumulators.*;
-import static com.mongodb.client.model.Aggregates.*;
-import static java.util.Arrays.asList;
-import static com.mongodb.client.model.Sorts.*;
-import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Projections.*;
-import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Accumulators.sum;
+import static com.mongodb.client.model.Aggregates.group;
+
 public class Ejercicio5 {
 
-//    [{$group: {
-//        _id: '$event-location',
-//                totalEvent: {
-//            $sum: 1
-//        }
-//    }}]
+    //    [{$group: {
+    //        _id: '$event-location',
+    //                totalEvent: {
+    //            $sum: 1
+    //        }
+    //    }}]
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
 

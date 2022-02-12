@@ -1,4 +1,5 @@
 package main;
+
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -9,17 +10,13 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mongodb.client.model.Accumulators.*;
 import static com.mongodb.client.model.Aggregates.*;
-import static java.util.Arrays.asList;
-import static com.mongodb.client.model.Sorts.*;
-import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Projections.*;
-import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.size;
+import static com.mongodb.client.model.Projections.exclude;
+
 public class Ejercicio14 {
 
-//    [{$lookup: {
+    //    [{$lookup: {
 //        from: 'User',
 //                localField: '_id',
 //                foreignField: '_id',
@@ -38,8 +35,8 @@ public class Ejercicio14 {
         MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION_CUSTOMER);
 
         col.aggregate(List.of(
-                lookup("User","_id","_id","have"),
-                match(size("have",0)),
+                lookup("User", "_id", "_id", "have"),
+                match(size("have", 0)),
                 project(exclude("have"))
         )).into(new ArrayList<>()).forEach(System.out::println);
 

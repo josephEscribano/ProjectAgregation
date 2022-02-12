@@ -13,25 +13,25 @@ import java.util.Arrays;
 public class Ejercicio4 {
 
 
-//    [{$match: {
-//        'event-location': {
-//            $regex: 'Latina'
-//        }
-//    }}, {$project: {
-//        _id: 0,
-//                month: {
-//            $month: {
-//                $toDate: '$dtstart'
-//            }
-//        }
-//    }}, {$match: {
-//        $expr: {
-//            $eq: [
-//            '$month',
-//                    1
-//  ]
-//        }
-//    }}, {$count: 'cantidad'}]
+    //    [{$match: {
+    //        'event-location': {
+    //            $regex: 'Latina'
+    //        }
+    //    }}, {$project: {
+    //        _id: 0,
+    //                month: {
+    //            $month: {
+    //                $toDate: '$dtstart'
+    //            }
+    //        }
+    //    }}, {$match: {
+    //        $expr: {
+    //            $eq: [
+    //            '$month',
+    //                    1
+    //  ]
+    //        }
+    //    }}, {$count: 'cantidad'}]
     public static void main(String[] args) {
 
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
@@ -40,17 +40,17 @@ public class Ejercicio4 {
         MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION);
 
         col.aggregate(Arrays.asList(new Document("$match",
-                        new Document("event-location",
-                                new Document("$regex", "Latina"))),
-                new Document("$project",
-                        new Document("_id", 0L)
-                                .append("month",
-                                        new Document("$month",
-                                                new Document("$toDate", "$dtstart")))),
-                new Document("$match",
-                        new Document("$expr",
-                                new Document("$eq", Arrays.asList("$month", 1L)))),
-                new Document("$count", "cantidad")))
+                                new Document("event-location",
+                                        new Document("$regex", "Latina"))),
+                        new Document("$project",
+                                new Document("_id", 0L)
+                                        .append("month",
+                                                new Document("$month",
+                                                        new Document("$toDate", "$dtstart")))),
+                        new Document("$match",
+                                new Document("$expr",
+                                        new Document("$eq", Arrays.asList("$month", 1L)))),
+                        new Document("$count", "cantidad")))
                 .into(new ArrayList<>())
                 .forEach(System.out::println);
 
