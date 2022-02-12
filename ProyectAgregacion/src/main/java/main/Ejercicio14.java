@@ -6,6 +6,9 @@ import com.mongodb.client.MongoDatabase;
 import main.Constantes.Constantes;
 import org.bson.Document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.mongodb.client.model.Accumulators.*;
 import static com.mongodb.client.model.Aggregates.*;
 import static java.util.Arrays.asList;
@@ -16,11 +19,29 @@ import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
 public class Ejercicio14 {
 
+//    [{$lookup: {
+//        from: 'User',
+//                localField: '_id',
+//                foreignField: '_id',
+//                as: 'have'
+//    }}, {$match: {
+//        have: {
+//            $size: 0
+//        }
+//    }}, {$project: {
+//        have: 0
+//    }}]
     public static void main(String[] args) {
         MongoClient mongo = MongoClients.create(Constantes.MONGODB);
 
         MongoDatabase db = mongo.getDatabase(Constantes.DATABASE);
         MongoCollection<Document> col = db.getCollection(Constantes.COLLECTION_CUSTOMER);
-        MongoCollection<Document> colUser = db.getCollection(Constantes.COLLECTION_USER);
+
+        col.aggregate(List.of(
+                lookup("User","_id","_id","have"),
+                match(size("have",0)),
+                project(exclude("have"))
+        )).into(new ArrayList<>()).forEach(System.out::println);
+
     }
 }

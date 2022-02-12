@@ -7,5 +7,5 @@ public class Constantes {
     public static final String COLLECTION = "Madrid";
     public static final String COLLECTION_CUSTOMER = "Customer";
     public static final String COLLECTION_ITEM = "Items";
-    public static final String COLLECTION_USER = "User";
+    public static final String COLLECTION_VIDEOJUEGOS = "Videojuegos";
 }
